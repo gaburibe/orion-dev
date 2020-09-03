@@ -44,24 +44,24 @@ exports.printSingle= function (key,ordenInfo){
 			`+ordenInfo.total+`</td>
 			</tr>
 			<td style="font-size: 14pt;border-bottom: 1px solid #000!important;">Costo de envío:</td><td style="padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.costo_envio+`</td>
+			`+ordenInfo.envio+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Nombre:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.nombre+`</td>
+			`+ordenInfo.username+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Teléfono:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.telefono+`</td>
+			`+ordenInfo.phone+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Dirección:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.dicreccion+`</td>
+			`+ordenInfo.direccion+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">
 			Comentarios:
-			</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">`+ordenInfo.comentarios+`</td>
+			</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">`+ordenInfo.indicaciones+`</td>
 			</tr>
 
 			
@@ -149,24 +149,24 @@ exports.print=function (callback){
 			`+ordenInfo.total+`</td>
 			</tr>
 			<td style="font-size: 14pt;border-bottom: 1px solid #000!important;">Costo de envío:</td><td style="padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.costo_envio+`</td>
+			`+ordenInfo.envio+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Nombre:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.nombre+`</td>
+			`+ordenInfo.username+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Teléfono:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.telefono+`</td>
+			`+ordenInfo.phone+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Dirección:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.dicreccion+`</td>
+			`+ordenInfo.direccion+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">
 			Comentarios:
-			</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">`+ordenInfo.comentarios+`</td>
+			</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">`+ordenInfo.indicaciones+`</td>
 			</tr>
 
 			

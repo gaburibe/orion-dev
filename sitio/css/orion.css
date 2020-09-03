@@ -7,9 +7,34 @@ div{
     padding-bottom: 0px !important;
     padding-top: 19px !important;
 }
-body{font-variant: small-caps !important;}
+input{
+    background-color: azure !important;
+}
+.divlast{
+        margin-bottom: 46px;
+}
+body{font-variant: small-caps !important;
+
+}
 .row{
     
+}
+button{
+    background-color: white !important;
+    font-size: 15pt;
+    width: 100%;
+    padding-left: 10%;
+    text-align: center;
+    background-color: white;
+    color: black !important;
+   /* border-radius: 25px;*/
+    border: 2px solid dimgrey;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px #00000073;
+}
+
+
 }
 .form-group {
     margin-bottom: 1rem;
@@ -36,7 +61,7 @@ body{font-variant: small-caps !important;}
 }
 .logo{
 	margin-top: 30px;
-	float:left;
+	/*float:left;*/
 	border-radius: 25px;
 	background:url(../img/logo.png);
 	background-size: 140px;
@@ -59,7 +84,7 @@ display: inline-block;
 transition: all 0.4s ease 0s;
 }
 body{
-	background-color: white !important;
+	background-color: #c8ffe9 !important;
 	/*background: url("../img/agua.jpg");*/
 	background-size: cover;
 }

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+  <title>Registro</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/orion.css">
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js" ></script>
+  
+</head>
+<!--Coded with love by Mutiullah Samim-->
+<style type="text/css">
+  .obligatorio{
+    background-color: #b3ffca !important;
+  }
+
+</style>
+<body>
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+        <div class="d-flex justify-content-center">
+          <div class="brand_logo_container">
+            <img src="img/logo.png" class="brand_logo" alt="Logo">
+          </div>
+
+        </div>
+        
+        <div class="d-flex justify-content-center form_container">
+
+          <form>
+            <p class="step1">Ingresa tu código postal para veríficar que tengamos cobertura en tu zona:</p>
+            <div class="step1 input-group mb-3 noback">
+              <input type="text" id="cpcheck" name="cp" class=" obligatorio form-control input_user" value="" placeholder="Código postal">
+             <button type="button" name="button" onclick="checkcp()" class="step1 btn login_btn">Consultar cobertura</button>
+            </div>
+
+            <p class="d-none step2">Tu zona es: <span id="zonaenv" style="color:#b3ffca;"></span> con tiene un costo de: $ <span id="costoenv" style="color:#b3ffca;"></span>. 
+            </p>
+
+              <p class="d-none step2">Para terminar el registro proporcionanos tu ubicación y datos de contacto . Los campos en <span style="color:#b3ffca;">Verde</span> son obligatorios. :)</p>
+
+            <p class="d-none step3">Tu usuario ha sido registrado. Bienvenido a la red Orion. Para volver al mercado haz click aquí.</p>
+            <div class="d-none step2 input-group mb-3 ">
+              <input type="text" name="username" class="obligatorio form-control input_user" value="" placeholder="Nombre de usuario">
+             <input type="text" name="email" class="obligatorio form-control input_user" value="" placeholder="E-mail">
+             <input type="number" name="phone" class="obligatorio form-control input_user" value="" placeholder="Teléfono">
+             
+             
+
+            </div>
+            
+            <div class="d-none step2 input-group mb-3 noback">
+             <input type="text" name="calle" class="obligatorio form-control input_user" value="" placeholder="Calle">
+             <input type="text" name="noext" class="obligatorio form-control input_user" value="" placeholder="Número exterior">
+             <input type="text" name="noint" class="form-control input_user" value="" placeholder="Número interior">
+            </div>
+           <div class="d-none step2 input-group mb-3 noback">
+              <input type="text" name="colonia" class="obligatorio form-control input_user" value="" placeholder="Colonia">
+              <input type="text" name="delegacion" class="obligatorio form-control input_user" value="" placeholder="Delegacion">
+            </div>
+            <div class="d-none step2 input-group mb-3 noback">
+              
+              <input type="text" name="indicaciones" class="form-control input_user" value="" placeholder="Indicaciones para mensajeros">
+            </div>
+            
+            <div class="d-none step2 input-group mb-3 noback">
+               <input type="text" name="password" class="obligatorio form-control " value="" placeholder="password">
+               
+            </div>
+            
+            
+             
+            </div>
+           <!--  <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customControlInline">
+                <label class="custom-control-label" for="customControlInline">Remember me</label>
+              </div>
+            </div> -->
+            <span id="console" style="color:#f3ffb3;">-</span> <br>
+            <span id="console2" style="color:#b3ffca;">-</span> <br>
+              <div class="d-flex justify-content-center mt-3 login_container noback divlast">
+
+          <button type="button" name="button" onclick="dosignup()" class="d-none step2 btn login_btn">Registrarse</button>
+           </div>
+          </form>
+       
+    
+        <div class="mt-4">
+          <!-- <div class="d-flex justify-content-center links">
+             <a href="#" class="ml-2">Registro</a>
+          </div> -->
+          <div class="d-flex justify-content-center links divlast">
+            <a href="#"><!-- Olvidaste tu password? --></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+    var x = document.cookie;
+    console.log("x",x)
+
+});
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function checkcp(){
+  
+    cp=$("#cpcheck").val();
+    $.ajax({
+        url: '/checkcp',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({"cp":cp}),
+        dataType: 'json',
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+          $("#console").html("Por el momento no tenemos cobertura en esa zona.");
+          //alert(xhr.responseText);
+        },
+        success: function (data){
+          console.log(data)
+          $("#console").html("");
+          $("#zonaenv").html(data[1]);
+          $("#costoenv").html(data[2]);
+          $(".step1").addClass('d-none');
+          $(".step2").removeClass('d-none');
+          
+        }
+    });
+
+}
+function dosignup(){
+  _R={};
+  vacios="";
+  $( "input" ).each(function() {
+    _R[$( this ).attr("name")]=$( this ).val();
+  });
+  // _R["username"]=_R["phone"]
+  $( ".obligatorio" ).each(function() {
+    val=$( this ).val();
+    if(val==""){
+      vacios+=$( this ).attr("name")+", ";
+      console.log("incompleto",$( this ).attr("name"));
+    }
+  });
+  if(vacios!=""){
+    $("#console").html("faltan los siguientes campos: "+vacios);
+  }
+  else{
+    console.log("log",_R)
+    $.ajax({
+        url: '/api/auth/signup',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(_R),
+        dataType: 'json',
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+          $("#console").html(xhr.responseText);
+          //alert(xhr.responseText);
+        },
+        success: function (data){
+
+          $(".step2").addClass('d-none');
+          $(".step3").removeClass('d-none');
+
+          // $("#console2").html("Tu usuario fue creado exitosamente y esta activo! Bienvenido a la red Orion. <a href=\"/\">Haz click aquí para ir al mercado.</a>");
+          
+        }
+    });
+  }
+  
+  
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+</script>
+</html>

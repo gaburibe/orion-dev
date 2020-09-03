@@ -71,7 +71,7 @@ body{
 	font-size: 15pt;
     width: 100%;
     text-align: center;
-    background-color: white;
+    background-color: grey;
         /*box-shadow: 3px 3px #00000047;*/
     color: black;
     border-radius: 25px;
@@ -104,25 +104,7 @@ body{
 	background-color: white;
 	color:black;
 }
-.checkout{
 
-	font-size: 15pt;
-    width: 100%;
-    padding-left: 10%;
-    text-align: center;
-        background-color: white;
-    color: white;
-    border-radius: 25px;
-  border: 2px solid dimgrey;
-  padding: 20px;
-  cursor: pointer;
-  box-shadow: 3px 3px #5049a9;
-  
-}
-.checkout:hover{
-	background-color: white;
-	color:black;
-}
 .regresar{
 	font-size: 15pt;
     width: 100%;
@@ -239,7 +221,7 @@ Your browser does not support the audio element.
 </audio><br>
 Claro de luna - Kamasi Washington
 <hr>
-			<span style="color:#49a954;">Servidor de prueba
+			<span style="color:black;">Servidor de prueba
 <br>
 <!-- <img src="img/onigiri.gif" style="width:150px;">
  -->	</span>
@@ -253,82 +235,166 @@ Claro de luna - Kamasi Washington
 
 <div class="container searcharea" >
 		<div class="row">
+		<div class="col-sm-12" id="infousuario" style="display:none;">
+				
+
+          	
+          <div class="col-sm-6" id="t_id" style="display:none;">id</div>
+          <div class="row">
+          	<div class="col-sm-4" >
+          		<span style="color:black;">Usuario:</span>
+          		<span id="t_username"></span>
+          	</div>
+          	<div class="col-sm-4" id="">
+          		<span style="color:black;">Crédito:</span>
+          		<span id="t_credit"></span>
+          	</div>
+          	<div class="col-sm-4" id="">
+          		<span style="color:black;">Nombre:</span>
+          		<span id="t_name"></span>
+          	</div>
+          </div>
+          <div class="row">
+          	<div class="col-sm-4" id="">
+          		<span style="color:black;">Email:</span>
+          		<span id="t_email"></span>
+          	</div>
+          	<div class="col-sm-4" id="">
+          		<span style="color:black;">Teléfono:</span>
+          		<span id="t_phone"></span>
+          	</div>
+          	<div class="col-sm-4" id="">
+          		<span style="color:black;">CP:</span>
+          		<span id="t_cp"></span>
+          	</div>
+          </div>
+          <div class="row">
+          	<div class="col-sm-2" id="">
+          		<span style="color:black;">Calle:</span>
+          		<span id="t_calle"></span>
+          	</div>
+          	<div class="col-sm-2" id="">
+          		<span style="color:black;">No exterior:</span>
+          		<span id="t_noext"></span>
+          	</div>
+          	<div class="col-sm-2" id="">
+          		<span style="color:black;">No interior:</span>
+          		<span id="t_noint"></span>
+          	</div>
+          	<div class="col-sm-3" id="">
+          		<span style="color:black;">Colonia:</span>
+          		<span id="t_colonia"></span>
+          	</div>
+          	<div class="col-sm-3" id="">
+          		<span style="color:black;">Delegación:</span>
+          		<span id="t_delegacion"></span>
+          	</div>
+          </div>
+          <div class="row">
+          	<div class="col-sm-4" id="">
+          		<span style="color:black;"></span>
+          		<span id="console"></span>
+          	</div>
+          	<div class="col-sm-4" id="">
+          		<span style="color:black;">Zona:</span>
+          		<span id="zonaenv"></span>
+          	</div>
+          	<div class="col-sm-4" id="">
+          		<span style="color:black;">Costo de envio:</span>
+          		<span id="costoenv"></span>
+          	</div>
+          	
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+			</div>
 		<!-- <div class="col-sm-4" id="search1">
 			<p class="instrucciones">1-Añade productos a tu orden mediante el menú</p>
-			
+		div.col-sm-4	
 		</div> -->
-		<div class="col-sm-4" id="search2">
-			<p class="instrucciones">Completa la información de tu pedido:</p>
+		<div class="col-sm-4 noback" id="search2">
+			<!-- <p class="instrucciones">Completa la información de tu pedido:</p> -->
 			<br>
-			<form>
-			  <div class="form-group">
-			    <label for="exampleInputEmail1"></label>
-			    <input type="text" class="form-control rabi" id="nombre" aria-describedby="emailHelp" placeholder="NOMBRE">
-			    <!-- <small id="emailHelp" class="form-text text-muted">Nombre</small> -->
-			  </div>
-			  <div class="form-group">
-			    <input type="number" class="form-control rabi" id="telefono" aria-describedby="emailHelp" placeholder="TELÉFONO">
-			    <!-- <small id="emailHelp" class="form-text text-muted">Nombre</small> -->
-			  </div>
-			  <div class="form-group">
-			    <input type="text" class="form-control rabi" id="direccion" aria-describedby="adress" placeholder="DIRECCIÓN">
-			    <!-- <small id="emailHelp" class="form-text text-muted">Nombre</small> -->
-			  </div>
-			  <div class="form-group">
-			    <input type="text" class="form-control rabi" id="comentarios" aria-describedby="comments" placeholder="COMENTARIOS">
-			    <!-- <small id="emailHelp" class="form-text text-muted">Nombre</small> -->
-			  </div>
-			  <!-- <div class="form-check">
-			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-			    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-			  </div> -->
-			  
-			</form>
+			<form id="loginform">
+            <div class="input-group mb-3 noback">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="text" id="_u" class="form-control input_user" value="" placeholder="usuario">
+            </div>
+            <div class="input-group mb-2 noback">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input type="password" id="_p" class="form-control input_pass" value="" placeholder="password">
+            </div>
+           <!--  <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customControlInline">
+                <label class="custom-control-label" for="customControlInline">Remember me</label>
+              </div>
+            </div> -->
+              <div class="d-flex justify-content-center mt-3 login_container noback divlast">
+          <button type="button" name="button" onclick="dosignin()" class="btn login_btn">Login</button>
+          <!-- <button type="button" name="button" onclick="checkInfo()" class="btn login_btn">info</button> -->
+          
+           </div>
+          </form>
+          <table id="userinfo" class="table">
+          	
+          </table>
 		</div>
-		<div class="col-sm-4" id="search3">
-			<p class="instrucciones">Reviza tu zona de envío y haz el checkout</p>
+		<div class="col-sm-4 noback" id="search3">
+			<div id="nuevoreg" class="noback">
+				<p class="instrucciones">Si esta es tu primera visita registra tus datos en el siguiente link:</p>
 			
-			<div class="row noback">
-				<div class="col-sm-12 noback">
-					<input type="radio" name="zona" id="zona2" value="0"> Recoger personalmente en Ámsterdam 46 (Condesa): $0<br>
-					<input checked="checked" type="radio" name="zona" id="zona1" value="30"> Verde: $30<br>
-					<input type="radio" name="zona" id="zona2" value="80"> amarilla: $80<br>
-					<input type="radio" name="zona" id="zona3" value="140"> roja: $140 
-				</div>	
-				
-			</div>
-			<br>
-			<div class="row noback">
-					<a class="mapa" style="font-size:11pt;" href="https://www.google.com/maps/d/viewer?mid=1nFVS9-qWElMCTQWsoXsSD6tjGZ-3hC8-&ll=19.372279482750603%2C-99.19043649999998&z=12" target="_blank">Ver mapa
+				<div class="row noback">
+				<div class="d-flex justify-content-center links noback">
+		        <div class="row noback">
+					<a class="mapa" style="font-size:15pt;" href="/registro" target="_blank">Registro
 						<br>
 						<!-- <img src="img/mapa.png" style="height: 50%;"> -->
 					</a>
-			
+				</div>
+				</div>
+				</div>
 			</div>
 			
-			
-			
-			
-			<br>
-
 		</div>
-		<div class="col-sm-4" id="search3" style="padding: 30px;">
-			<div class="row noback">
-				
-					<div class="carrito2 noback"><p style="font-size: 13pt;color:red;">total:</p><span id="sum">0</span> Pesos </div>
-				
-				
-			</div>
-			<br><br><br>
-			<div class="row noback">
-					<div class="checkout noback" onclick="checkout();">checkout</div>
-			</div>
-		</div>
+		
 	</div>
-	<div class="row"><hr>
-	</div>	
+
+		
 </div>	
-<hr/>
+
+
+<div class="container controllers" >
+<div class="row">
+	<div class="col-sm-6">
+		<div class="row noback">
+				
+					<div class="carrito2 "><p style="font-size: 13pt;color:black;">total:</p><span id="sum">0</span> Pesos </div>
+				
+				
+			</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="row noback">
+					<button class="checkout " onclick="checkout();">checkout</button>
+			</div>
+	</div>
+</div>
+</div>
+
+
 <div class="container splash" >
 
 
@@ -336,9 +402,9 @@ Claro de luna - Kamasi Washington
 	<div class="regresar" onclick="regresar();">regresar al menú</div>
 	<br>
 	<h3>Información de contacto:</h3>
-<h4 style="color:red;" id="confirmainfo"></h4>
+<h4 style="color:black;" id="confirmainfo"></h4>
 <h4>TOTAL:</h4>
-<h4 style="color:red;" id="confirmatotal"></h4>
+<h4 style="color:black;" id="confirmatotal"></h4>
 	
 	<hr>
 	<p>Si quieres revisar nuevamente tu pedido, puedes utilizar el botón de “regresa al menú” y usar el botón de vizualisar pedido. </p>
@@ -348,9 +414,9 @@ Claro de luna - Kamasi Washington
 	<ul>
 		<li>1.    COMPLETA TU ORDEN DANDO CLICK EN EL BOTON VERDE DE ABAJO: Si no lo haces, tus productos no serán apartados y puedes quedarte sin ellos</li>
 		<li>2.    REALIZA TU PAGO: contamos con dos métodos:<br>
-- Por PAYPAL: pablo@colectivoaxolote.mx <br>
-- Por transferencia: CLABE: 012180001943749597| BANCOMER | CUENTA: 0194374959 |BENEFICIARIO: COLECTIVO ATL-XOLOTL S.A. DE C.V.</li>
-		<li> 3.    ENVÍA TU COMPROBANTE DE PAGO Y # DE ORDEN A NUESTRO WHATSAPP 5572117094
+- xxxxx <br>
+- Por transferencia: CLABE: xxxxx</li>
+		<li> 3.    ENVÍA TU COMPROBANTE DE PAGO Y # DE ORDEN A NUESTRO WHATSAPP xxxx
 
 </li>
 	</ul>
@@ -429,10 +495,16 @@ Claro de luna - Kamasi Washington
 _MENU={};
 _productos={};
 carselected=false;
+_USER={};
+_ZONA="";
 $(document).ready(function(){
 	makesum();
 	getMenu();
+	jwt=getCookie("jwt");
 
+	  if(jwt.length>=2){
+	    checkInfo();
+	  }
 
 	  $("#myinput").on("keyup", function() {
 	    var value = $(this).val().toLowerCase();
@@ -445,7 +517,34 @@ $(document).ready(function(){
 	  });
 
 });
+function checkcp(cp){
+  
+	console.log("checking",cp)
+    $.ajax({
+        url: '/checkcp',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({"cp":cp}),
+        dataType: 'json',
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+          $("#console").html("Por el momento no tenemos cobertura en tu zona.");
+          //alert(xhr.responseText);
+        },
+        success: function (data){
+          console.log(data)
+          $("#console").html("");
+          _ZONA=data[1];
+          $("#zonaenv").html(data[1]);
+          $("#costoenv").html(data[2]);
+          makesum();
+          // $(".step1").addClass('d-none');
+          // $(".step2").removeClass('d-none');
+          
+        }
+    });
 
+}
 function getMenu(){
 
 	var xmlhttp = new XMLHttpRequest();
@@ -593,7 +692,7 @@ function updateInput(ish, idrow){
 function makesum(){
 	num=0;
 	sum=0;
-	envio=Number.parseFloat($('input:radio[name=zona]:checked').val() );
+	envio=parseFloat( $("#costoenv").html() );//Number.parseFloat($('input:radio[name=zona]:checked').val() );
 	sum+=envio;
 	$("#compras0").html("");
 	$("#compras1").html("");
@@ -611,25 +710,30 @@ function makesum(){
 		}
 		
 	}
+	console.log("sum",sum,envio)
 	$("#sum").text(sum);
 }
 function checkout(){
-	form_name=$("#nombre").val();
-		form_telefono=$("#telefono").val();
-		form_direccion=$("#direccion").val();
-		form_comentario=$("#comentarios").val();
+		form_name=_USER.username;
+		form_telefono=_USER.phone;
+		form_direccion=_USER.calle+" "
+		+_USER.noint+"- "
+		+_USER.noext+", "
+		+_USER.colonia+", "+_USER.delegacion;
+		//form_comentario=$("#t_").val();
 		if(form_name=="" || form_telefono=="" || form_direccion=="" ){
 			alert("Favor de completar el registro");
 		}
 		else{
-			form_total=$("#sum").html();
-		envio=Number.parseFloat($('input:radio[name=zona]:checked').val() );
-		orden={"nombre":form_name, "total":form_total,"telefono":form_telefono,"dicreccion":form_direccion,"comentarios":form_comentario,"costo_envio":envio,"orden":_productos}
-		$("#confirmainfo").text(form_name+" , "+form_direccion+" , "+form_telefono+" , ");
+		form_total=$("#sum").html();
+		envio=parseFloat( $("#costoenv").html() );
+		orden={"usuario":_USER.username,"envio":envio,"zona":_ZONA,"usuario_id":_USER.id,"orden":_productos}
+		$("#confirmainfo").text(form_name+" | "+form_direccion+" | "+form_telefono);
 		$("#confirmatotal").text("$"+form_total+"  Pesos");
 		$("#table_cont").hide();
 		$(".splash").show();
 		$(".searcharea").hide();
+
 		}
 		
 }
@@ -642,13 +746,16 @@ function regresar(){
 function ordenar(){
 		$(".ordenar").hide();
 		orden={};
-		form_name=$("#nombre").val();
-		form_telefono=$("#telefono").val();
-		form_direccion=$("#direccion").val();
-		form_comentario=$("#comentarios").val();
+		form_name=_USER.username;
+		form_telefono=_USER.phone;
+		form_direccion=_USER.calle+" "
+		+_USER.noint+"- "
+		+_USER.noext+", "
+		+_USER.colonia+", "+_USER.delegacion;
+		indicaciones=_USER.indicaciones;
 		form_total=$("#sum").html();
-		envio=Number.parseFloat($('input:radio[name=zona]:checked').val() );
-		orden={"nombre":form_name, "total":form_total,"telefono":form_telefono,"dicreccion":form_direccion,"comentarios":form_comentario,"costo_envio":envio,"orden":_productos}
+		envio=Number.parseFloat($("#costoenv").html() );
+		orden={"total":form_total,"envio":envio,"username":_USER.username,"envio":envio,"zona":_ZONA,"usuario_id":_USER.id,"direccion":form_direccion,"indicaciones":indicaciones,"phone":_USER.phone,"email":_USER.email,"orden":_productos}
 		//console.log("_productos",JSON.stringify(orden));
 	        //var data = _productos;
 	        $.ajax({
@@ -659,7 +766,7 @@ function ordenar(){
         dataType: 'json',
         success: function (data){
 			console.log("DATA",data);
-			$("#avisofinal").html('<p>Tu pedido ha sido procesado! Para confirmar tu orden te pedimos enviar tu comprobante de pago y tu número de orden por whatsapp al teléfono: 5572117094.</p> <p>Si deseas visualizar tu pedido, entra al siguiente link: <a href="http://www.ciudadsilvestre.mx/orden" target="_blank">www.ciudadsilvestre.mx/orden</a></p>');
+			$("#avisofinal").html('<p>Tu pedido ha sido procesado! Para confirmar tu orden te pedimos enviar tu comprobante de pago y tu número de orden por whatsapp al teléfono: xxxxxx.</p> <p>Si deseas visualizar tu pedido, copia tu número de orden e ingresalo en el siguiente link: <a href="/orden" target="_blank">VISOR</a></p>');
 			$("#numorden").text("Número de orden: "+data.orden);
 			$(".regresar").hide();
 			// $("#search1").html('<h1>numero de orden: '+data.orden+'</h1>')
@@ -669,7 +776,97 @@ function ordenar(){
     });
 
 }
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function dosignin(){
+  jwt=getCookie("jwt");
 
+  if(jwt.length>=2){
+    checkInfo();
+  }
+  else{
+    console.log("sign in");
+  }
+  _u=$("#_u").val();
+  _p=$("#_p").val();
+  console.log("log",_u,_p)
+  $.ajax({
+        url: '/api/auth/signin',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({"username":_u,"password":_p}),
+        beforeSend: function (xhr) {   //Include the bearer token in header
+        xhr.setRequestHeader("Authorization", 'Bearer '+ jwt);
+        },
+        dataType: 'json',
+        success: function (data){
+        	if(data.username){
+        		_USER=data;
+        		$("#infousuario").show();
+          		$("#loginform").hide();
+          		$("#nuevoreg").hide();
+          		for (key in data) {
+          			$("#t_"+key).html(data[key]);
+	          	}
+	         checkcp(data["cp"]);
+          }
+          setCookie("orionuser",data.username,70);
+          setCookie("jwt",data.accessToken,70);
+          console.log("DATA",data);
+          
+        }
+    });
+}
+function checkInfo(){
+	jwt=getCookie("jwt");
+	username=getCookie("orionuser");
+	$.ajax({
+        url: '/api/touch/user',
+        type: 'GET',
+        contentType: 'application/json',
+        headers: {"x-access-token":jwt,
+        		  "orionuser":username
+    	},
+        dataType: 'json',
+        success: function (data){
+          console.log("DATA user",data);
+          $("#userinfo").html();
+          if(data.username.length>=1){
+          	$("#infousuario").show();
+          	$("#loginform").hide();
+          	$("#nuevoreg").hide();
+          	_USER=data;
+          	for (key in data) {
+          		$("#t_"+key).html(data[key]);
+	          	// $("#userinfo").append('<div id="t_'+key+'">'+key+'</div><div>'+data[key]+'</div>');
+	          }
+	        checkcp(data["cp"]);
+          }
+          
+          
+        }
+    });
+	console.log("already signed");
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 </script>
 	
 </script>

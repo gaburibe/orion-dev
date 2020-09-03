@@ -4,7 +4,7 @@
  
 <td align="center" bgcolor="#FFF" style="padding: 40px 0 30px 0;">
  
- <img src="cid:logo" alt="Orion" width="300" height="230" style="display: block;" />
+ <img src="cid:logo" alt="Orion" width="100" height="80" style="display: block;" />
  
 </td>
  
@@ -40,15 +40,15 @@
  {{costo_envio}}
 </td>
  </tr>
- 
- </table>
- <h3>Pedido:</h3>
- <table>
- </tr>
-{{#each pedido}}
+ <tr><h3>Pedido:</h3></tr>
+ {{#each pedido}}
   <tr>{{#each this}}
     <td>{{ this }}<td>
   {{/each}}</tr>
 {{/each}}
+
+ 
+ 
+
 
 </table>

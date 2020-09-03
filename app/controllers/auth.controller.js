@@ -9,7 +9,20 @@ var bcrypt = require("bcryptjs");
 exports.signup = (req, res) => {
   const user = new User({
     username: req.body.username,
+    name: req.body.name,
     email: req.body.email,
+    cp: req.body.cp,
+    phone: req.body.phone,
+    calle: req.body.calle,
+    noext: req.body.noext,
+    noint: req.body.noint,
+    colonia: req.body.colonia,
+    delegacion: req.body.delegacion,
+    ciudad: req.body.ciudad,
+    mercado: req.body.mercado,
+    zona: req.body.zona,
+    indicaciones: req.body.indicaciones,
+    credit: 0,
     password: bcrypt.hashSync(req.body.password, 8)
   });
 
@@ -37,7 +50,7 @@ exports.signup = (req, res) => {
               return;
             }
 
-            res.send({ message: "User was registered successfully!" });
+            res.send({ message: "Usuario registrado exitosamente" });
           });
         }
       );
@@ -55,7 +68,7 @@ exports.signup = (req, res) => {
             return;
           }
 
-          res.send({ message: "User was registered successfully!" });
+          res.send({ message: "Usuario registrado exitosamente" });
         });
       });
     }
@@ -63,6 +76,7 @@ exports.signup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
+
   User.findOne({
     username: req.body.username
   })
@@ -74,7 +88,7 @@ exports.signin = (req, res) => {
       }
 
       if (!user) {
-        return res.status(404).send({ message: "User Not found." });
+        return res.status(404).send({ message: "Usuario no encontrado." });
       }
 
       var passwordIsValid = bcrypt.compareSync(
@@ -85,12 +99,12 @@ exports.signin = (req, res) => {
       if (!passwordIsValid) {
         return res.status(401).send({
           accessToken: null,
-          message: "Invalid Password!"
+          message: "Password inválido"
         });
       }
 
       var token = jwt.sign({ id: user.id }, config.secret, {
-        expiresIn: 86400 // 24 hours
+        expiresIn: 70*86400 // 24 hours
       });
 
       var authorities = [];
@@ -98,10 +112,24 @@ exports.signin = (req, res) => {
       for (let i = 0; i < user.roles.length; i++) {
         authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
       }
+      console.log("gg",user)
       res.status(200).send({
         id: user._id,
         username: user.username,
         email: user.email,
+        cp: user.cp,
+        phone: user.phone,
+        calle: user.calle,
+        noext: user.noext,
+        noint: user.noint,
+        colonia: user.colonia,
+        delegacion: user.delegacion,
+        ciudad: user.ciudad,
+        mercado: user.mercado,
+        zona: user.zona,
+        indicaciones: user.indicaciones,
+        credit: user.credit,
+        name:    user.name,
         roles: authorities,
         accessToken: token
       });

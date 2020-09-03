@@ -28,27 +28,56 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
-var fs = require("fs");
-var path = require('path');
-var menuManager = require('./menuManager');
-var printingSystem = require('./printingSystem');
-var mailer = require('./mailer');
-var kokoro = require('./dbindex');
-//console.log("public",__dirname + '/sitio')
 app.use('/', express.static(__dirname + '/sitio'));
 app.use('/bandeja/', express.static(__dirname + '/bandeja'));
 app.use('/ordenes/', express.static(__dirname + '/ordenes'));
 app.use('/archivo/', express.static(__dirname + '/archivo'));
 
+var fs = require("fs");
+var path = require('path');
+var menuManager = require('./menuManager');
+var _ZONAS={};
+var printingSystem = require('./printingSystem');
+var mailerSystem = require('./mailer');
+var kokoro = require('./dbindex');
+//console.log("public",__dirname + '/sitio')
 
+
+kokoro.connectDB();
 menuManager.inicializa();
+makezones();
+
+
+
+
+function makezones(){
+	IN_file="mensajeria/zonas.csv";
+	rownum=0;
+	obj={}
+	obj2={}
+	csv
+	 .parseFile(IN_file,{ delimiter:';'})  //BUG BIZARRO !!!
+	 .on("data", function(data){
+	 	if(rownum==0){}
+	 	else{
+	 		obj[data[0]]=[ data[1],data[3],data[4] ];
+
+	 	}
+	 	rownum+=1;
+	 		 	
+	 })	
+	 .on("end", function(){
+	 	_ZONAS=obj;
+	 	//return (obj);
+	 	// this.codigosPostales=obj;
+	 	// console.log("_zones loaded_",this.codigosPostales)
+	 })
+}
 
 //ORDENES
 app.post('/orden', function (req, res) {
   //console.log(req.body);
-  name=req.body["nombre"].substring(0,4)+"__"+Math.floor(Math.random() * 100)+Math.floor(Date.now() / 60000);
+  name=req.body["username"].substring(0,4)+"__"+Math.floor(Math.random() * 100)+Math.floor(Date.now() / 60000);
   fs.writeFile("ordenes/"+name+".json",JSON.stringify(req.body) , function(err) {
 	    if(err) {
 	        return console.log(err);
@@ -90,7 +119,13 @@ app.get('/menu', function (req, res) {
 
 });
 
-
+//MENSAJERÍA
+app.post('/checkcp', function (req, res) {
+  console.log(req.body);
+  cp=req.body["cp"];
+  console.log(cp);
+  res.send(_ZONAS[cp]);
+});
 
 
 //SITIO PRINCIPAL
@@ -111,7 +146,16 @@ app.get('/orden', function (req, res) {
 
 });
 
-
+//LOGIN
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname + '/sitio/login.html'));
+});
+app.get('/registro', function (req, res) {
+  res.sendFile(path.join(__dirname + '/sitio/signup.html'));
+});
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname + '/sitio/login.html'));
+});
 
 //TEST
 app.get('/hello', function (req, res) {
@@ -195,18 +239,21 @@ app.get('/operacion', function (req, res) {
 app.post('/orion/backconfirm', function (req, res) {
 	nombreorden=req.body["nombre"];
 	console.log("./ordenes/"+nombreorden)
-	fs.readFile("./ordenes/"+nombreorden, (err, data) => {
-	    if (err) throw err;
-	    let json = JSON.parse(data);
+	mailerSystem.testmail(nombreorden,function(mailst){
+		console.log(mailst);
+		fs.readFile("./ordenes/"+nombreorden, (err, data) => {
+		    if (err) throw err;
+		    let json = JSON.parse(data);
 
-	    html=printingSystem.printSingle(nombreorden,json);
-		pdf.create(html,{ format: 'Letter' }).toFile('./bandeja/'+nombreorden+'.pdf', function(err, result) {
-			if (err){console.log(err);} else {console.log(result);}
-			console.log('./bandeja/'+nombreorden+'.pdf',"CONFIRMED");
-			res.sendStatus(200)
+		    html=printingSystem.printSingle(nombreorden,json);
+			pdf.create(html,{ format: 'Letter' }).toFile('./bandeja/'+nombreorden+'.pdf', function(err, result) {
+				if (err){console.log(err);} else {console.log(result);}
+				console.log('./bandeja/'+nombreorden+'.pdf',"CONFIRMED");
+				res.sendStatus(200)
+			});
+			 
 		});
-		 
-	});
+	})
 	
 	
 });
@@ -321,7 +368,7 @@ app.post('/orion/closeOp', function (req, res) {
 //MAILER
 
 app.get('/testmail', function (req, res) {
-	mailer.testmail(function(error){
+	mailerSystem.testmail(function(error){
 		if(error){res.send(error);}
 		else{res.send("cool");}
 	})
@@ -329,9 +376,7 @@ app.get('/testmail', function (req, res) {
 });
 //DB
 
-app.get("/kokorotest", (req, res) => {
-  res.json({ message: "Welcome to Kokoro." });
-});
+
 
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);

@@ -21,9 +21,8 @@ const cors = require("cors");
 const db = require("./app/models");
 const dbConfig = require("./app/config/db.config");
 const Role = db.role;
-
-function connectDB(app){
-	db.mongoose
+exports.connectDB= function(newmenu,callback){
+  db.mongoose
   .connect(`mongodb://orion:13@${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -37,6 +36,7 @@ function connectDB(app){
     process.exit();
   });
 }
+
 
 
 
@@ -100,5 +100,3 @@ function initial() {
 //   console.log(`Server is running on port ${PORT}.`);
 // });
 
-
-exports = connectDB;

@@ -29,37 +29,42 @@ var mailOptions={
 
 
 
-exports.testmail= function (callback,ordername){
+exports.testmail= function (ordername,callback){
 
 readHTMLFile('sitio/mail.html', function(err, html) {
-	//ordername="Adri__2426618590";
-	pedido=["producto","cantidad","total"];
-	orden = JSON.parse(fs.readFileSync('ordenes/'+ordername+".json", 'utf8'));
+    //ordername="Adri__2426618590";
+    pedido=["producto","cantidad","total"];
+    orden = JSON.parse(fs.readFileSync('ordenes/'+ordername, 'utf8'));
+    console.log("sending... ",orden.email);
+    if(orden.email==""){
+        callback("no mail");
+    }
     for(key in orden.orden){
-    	if(orden.orden[key][1]!=0){
-    		precio=parseFloat(orden.orden[key][2].replace("$","")) ;
-    		pedido.push([orden.orden[key][0],orden.orden[key][1],"$"+(precio*orden.orden[key][1]) ])
-    	}
+        if(orden.orden[key][1]!=0){
+            precio=parseFloat(orden.orden[key][2].replace("$","")) ;
+            pedido.push([orden.orden[key][0],orden.orden[key][1],"$"+(precio*orden.orden[key][1]) ])
+        }
     }
     var template = handlebars.compile(html);
     var replacements = {
          orden: ordername,
-         nombre: orden.nombre,
-         costo_envio:orden.costo_envio,
+         nombre: orden.username,
+         costo_envio:orden.envio,
          pedido: pedido,
+         recoleccion:orden.recoleccion, 
          total:orden.total
     };
     var htmlToSend = template(replacements);
     var mailOptions = {
         from:"Orion",
-		to:"slackerandschmuck@gmail.com",
-		subject:"Orion mail test",
+        to:orden.email,
+        subject:"Orden confirmada",
         html : htmlToSend,
         attachments: [{
-		     filename: 'logo.png',
-		     path: 'sitio/img/logo.png',
-		     cid: 'logo' //my mistake was putting "cid:logo@cid" here! 
-		}]
+             filename: 'logo.png',
+             path: 'sitio/img/logo.png',
+             cid: 'logo' //my mistake was putting "cid:logo@cid" here! 
+        }]
      };
     transporter.sendMail(mailOptions, function (error, response) {
         if (error) {
