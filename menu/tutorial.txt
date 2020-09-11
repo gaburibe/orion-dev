@@ -46,7 +46,7 @@ https://github.com/DRFresco/orion-v1.git
 ssh root@199.244.51.123 
 rm -rf /root/orion/menuManager/ordenes
 rm -rf /orion/menuManager/archivo
-mv /root/orion/menuManager/ordenes /root/orion/menuManager/archivo/ordenes13jun
+mv /root/orion/menuManager/ordenes /root/orion/menuManager/archivo/ordenes9sep
 mv /root/orion/menuManager/archivo/ordenes9jun /root/orion/menuManager/ordenes
 mv /root/orion/menuManager/archivo/ordenes9jun /root/orion/menuManager/ordenes 
 
@@ -60,7 +60,7 @@ git fetch --all
 git reset --hard origin/master
 
 
-zip -r ordenes12ago.zip ordenes12ago
+zip -r ordenes9sep.zip ordenes9sep
 zip -r ordenes16jun.zip ordenes
 
 mv /root/orion/menuManager/ordenes16jun.zip /root/orion/menuManager/archivo/ordenes16jun.zip

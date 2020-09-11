@@ -137,7 +137,7 @@ app.get('/', function (req, res) {
 	   res.sendFile(path.join(__dirname + '/sitio/splash.html'));
 	}
 	else{
-	   res.sendFile(path.join(__dirname + '/sitio/menu.html'));
+	   res.sendFile(path.join(__dirname + '/sitio/index.html'));
 	}	
 
 });
@@ -308,6 +308,9 @@ app.get('/orionadmin', function (req, res) {
 });
 app.get('/back', function (req, res) {
 	res.sendFile(path.join(__dirname + '/sitio/back.html'));
+});
+app.get('/mensajeria', function (req, res) {
+	res.sendFile(path.join(__dirname + '/sitio/flyadmin.html'));
 });
 app.get('/status', function (req, res) {
 	orderdir="./ordenes";

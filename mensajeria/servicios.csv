@@ -1,0 +1,8 @@
+Medio,Zona,Martes|9:00-12:00,Martes|12:00-15:00,Martes|15:00-18:00,Miércoles|9:00-12:00,Miércoles|12:00-15:00,Miércoles|15:00-18:00,Jueves|9:00-12:00,Jueves|12:00-15:00,Jueves|15:00-18:00,Viernes|9:00-12:00,Viernes|12:00-15:00,Viernes|15:00-18:00
+Ronin,Centro,20,20,20,20,20,20,20,20,20,20,20,20
+Uber/ Conductor,Sur1,3,7,,,,5,3,7,,,,5
+Uber/ Conductor,Sur2,7,3,,,,5,7,3,,,,5
+Uber/ Conductor,Poniente,,,5,10,,,,,5,10,,
+Uber/ Conductor,Norte1,,,5,5,5,,,,5,5,5,
+Uber,Norte2,,,,5,,5,,,,5,,5
+Uber,Oriente,,,,5,,5,,,,5,,5

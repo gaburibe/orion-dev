@@ -19,13 +19,13 @@ exports.printSingle= function (key,ordenInfo){
 			<Br>
 			<table style="margin-top:150px;">
 			<tr>
-				<td style="border-bottom: 1px solid #000!important;">Producto</td>
-				<td style="border-bottom: 1px solid #000!important;">Productor</td>
-				<td style="border-bottom: 1px solid #000!important;">Cantidad</td>
-				<td style="border-bottom: 1px solid #000!important;">-</td>
-				<td style="border-bottom: 1px solid #000!important;">-</td>
-				<td style="border-bottom: 1px solid #000!important;">Total por producto</td>
-				<td style="border-bottom: 1px solid #000!important;">-</td>
+				<td style="font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Producto</td>
+				<td style="font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Productor</td>
+				<td style="font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Cantidad</td>
+				<td style="font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">-</td>
+				<td style="font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">-</td>
+				<td style="font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Total por producto</td>
+				<td style="font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">-</td>
 			</tr>
 		
 		`;
@@ -36,32 +36,32 @@ exports.printSingle= function (key,ordenInfo){
 				
 
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 14pt;border-bottom: 1px solid #000!important;">Número de orden:</td><td style="padding-left: 60px;border-bottom: 1px solid #000!important;">
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Número de orden:</td><td style="padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
 			`+key+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 14pt;border-bottom: 1px solid #000!important;">Total:</td><td style="padding-left: 60px;border-bottom: 1px solid #000!important;">
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Total:</td><td style="padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
 			`+ordenInfo.total+`</td>
 			</tr>
-			<td style="font-size: 14pt;border-bottom: 1px solid #000!important;">Costo de envío:</td><td style="padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.envio+`</td>
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Costo de envío:</td><td style="padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
+			`+ordenInfo.costo_envio+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Nombre:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.username+`</td>
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Nombre:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
+			`+ordenInfo.nombre+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Teléfono:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.phone+`</td>
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Teléfono:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
+			`+ordenInfo.telefono+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Dirección:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.direccion+`</td>
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Dirección:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
+			`+ordenInfo.dicreccion+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">
 			Comentarios:
-			</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">`+ordenInfo.indicaciones+`</td>
+			</td><td style="font-size: 10pt;padding-left: 60px;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">`+ordenInfo.comentarios+`</td>
 			</tr>
 
 			
@@ -69,25 +69,26 @@ exports.printSingle= function (key,ordenInfo){
 			</table>
 		</div>
 		<pre  style="width:13vw;font-size: 4pt; height:10vw;position:fixed;top:10px;right: 140px;">
-		         wWWWw               wWWWw
-		   vVVVv (___) wWWWw         (___)  vVVVv
-		   (___)  ~Y~  (___)  vVVVv   ~Y~   (___)
-		    ~Y~   \|    ~Y~   (___)    |/    ~Y~
-		    \|   \ |/   \| /  \~Y~/   \|    \ |/
-		   \\|// \\|// \\|/// \\|//  \\|// \\\|///
-		jgs^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-		      C I U D A D   S I L V E S T R E 
-
-		      CIUDADSILVESTRE.MX
-
-		      55 72117094 
-
-		      @CIUDAD_SILVESTRE
-
-		</pre>
-
-		`;
+						           o|
+			   _________/__|__________
+			  |                  - (  |
+			 ,'-.                 . + |
+			(____".       ,-.    '   ||\
+			  |          /|,-|   ,-.  |\
+			  |      ,-./     | /'.-| |\
+			  |     /-.,|      /     ||\
+			  |    /     |    ,-.     |\
+			  |___/_______|__/___|_____| orion\
+\
+		      EL RENACER DEL CAMPO \
+\
+		      \
+\
+		      722 108 2700 \
+\
+		      @elrenacerdelcampo\
+\
+		</pre>`;
 		orden=ordenInfo.orden;
 		for(pp in orden){
 					arr=orden[pp];
@@ -124,13 +125,13 @@ exports.print=function (callback){
 			<Br>
 			<table style="margin-top:150px;">
 			<tr>
-				<td style="border-bottom: 1px solid #000!important;">Producto</td>
-				<td style="border-bottom: 1px solid #000!important;">Productor</td>
-				<td style="border-bottom: 1px solid #000!important;">Cantidad</td>
-				<td style="border-bottom: 1px solid #000!important;">-</td>
-				<td style="border-bottom: 1px solid #000!important;">-</td>
-				<td style="border-bottom: 1px solid #000!important;">Total por producto</td>
-				<td style="border-bottom: 1px solid #000!important;">-</td>
+				<td style="font-size:10pt; font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Producto</td>
+				<td style="font-size:10pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Productor</td>
+				<td style="font-size:10pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Cantidad</td>
+				<td style="font-size:10pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">-</td>
+				<td style="font-size:10pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">-</td>
+				<td style="font-size:10pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Total por producto</td>
+				<td style="font-size:10pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">-</td>
 			</tr>
 		
 		`;
@@ -141,32 +142,32 @@ exports.print=function (callback){
 				
 
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 14pt;border-bottom: 1px solid #000!important;">Número de orden:</td><td style="padding-left: 60px;border-bottom: 1px solid #000!important;">
+			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Número de orden:</td><td style="padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
 			`+key+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 14pt;border-bottom: 1px solid #000!important;">Total:</td><td style="padding-left: 60px;border-bottom: 1px solid #000!important;">
+			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Total:</td><td style="padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
 			`+ordenInfo.total+`</td>
 			</tr>
-			<td style="font-size: 14pt;border-bottom: 1px solid #000!important;">Costo de envío:</td><td style="padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.envio+`</td>
+			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Costo de envío:</td><td style="padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
+			`+ordenInfo.costo_envio+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Nombre:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.username+`</td>
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Nombre:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
+			`+ordenInfo.nombre+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Teléfono:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.phone+`</td>
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Teléfono:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
+			`+ordenInfo.telefono+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Dirección:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">
-			`+ordenInfo.direccion+`</td>
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Dirección:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
+			`+ordenInfo.dicreccion+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
-			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">
 			Comentarios:
-			</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">`+ordenInfo.indicaciones+`</td>
+			</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #000!important;">`+ordenInfo.comentarios+`</td>
 			</tr>
 
 			
@@ -174,22 +175,24 @@ exports.print=function (callback){
 			</table>
 		</div>
 		<pre  style="width:13vw;font-size: 4pt; height:10vw;position:fixed;top:10px;right: 140px;">
-		         wWWWw               wWWWw
-		   vVVVv (___) wWWWw         (___)  vVVVv
-		   (___)  ~Y~  (___)  vVVVv   ~Y~   (___)
-		    ~Y~   \|    ~Y~   (___)    |/    ~Y~
-		    \|   \ |/   \| /  \~Y~/   \|    \ |/
-		   \\|// \\|// \\|/// \\|//  \\|// \\\|///
-		jgs^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-		      C I U D A D   S I L V E S T R E 
-
-		      CIUDADSILVESTRE.MX
-
-		      55 72117094 
-
-		      @CIUDAD_SILVESTRE
-
+						           o|
+			   _________/__|__________
+			  |                  - (  |
+			 ,'-.                 . + |
+			(____".       ,-.    '   ||\
+			  |          /|,-|   ,-.  |\
+			  |      ,-./     | /'.-| |\
+			  |     /-.,|      /     ||\
+			  |    /     |    ,-.     |\
+			  |___/_______|__/___|_____| orion\
+\
+		      EL RENACER DEL CAMPO \
+\
+		      \
+\
+		      722 108 2700 \
+\
+		      @elrenacerdelcampo\
 		</pre>
 
 		`;

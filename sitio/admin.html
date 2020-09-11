@@ -321,7 +321,8 @@ textarea{
 
 
 </body>
-
+<!-- ORIONJS -->
+<script type="text/javascript" src="js/orion.js" />
 <script type="text/javascript">
 $(document).ready(function(){
   
@@ -329,7 +330,23 @@ $(document).ready(function(){
 
 
 }); 
-
+function parseCSV(){
+  
+  text=$("#consola").val();
+  json=csvIntoObject(text);
+  console.log(obj)
+  for(row in json){
+    r='<tr>';
+      for(i=0;i<json[row].length;i++){
+      r+='<td>'+json[row][i]+'</td>';
+      }
+    r+='</tr>';
+    console.log(r)
+    $("#tabla_envios").append(r);
+  }
+  
+  
+}
 
 function getStatus(){
   status="0-activo";

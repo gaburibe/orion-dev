@@ -2,7 +2,7 @@ div{
 	/*border-radius: 25px;*/
     border: 0px solid #000000;
     padding: 10px;
-    background-color: #003a753b !important;
+    background-color: #2196f359 !important;
     color: white !important;
     padding-bottom: 0px !important;
     padding-top: 19px !important;
@@ -84,11 +84,44 @@ display: inline-block;
 transition: all 0.4s ease 0s;
 }
 body{
-	background-color: #c8ffe9 !important;
+	background-color: white !important;
 	/*background: url("../img/agua.jpg");*/
 	background-size: cover;
 }
 a{
 	color:black;
 	font-size: 16px;
+}
+/*BOTONES*/
+.button-p {
+    margin: 0 0 0 5px;
+    text-indent: -9999px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    float: left;
+    text-align: center;
+    background: url(../img/plus.png) no-repeat;
+    background-size: cover;
+}
+.button-m {
+    margin: 0 0 0 5px;
+    text-indent: -9999px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    float: left;
+    text-align: center;
+    background: url(../img/minus.png) no-repeat;
+    background-size: cover;
+}
+
+.matutino{
+    background-color: #95ff884a;
+}
+.mediodia{
+    background-color: #fdff884a;
+}
+.vespertino{
+    background-color: #ff9e884a;
 }
