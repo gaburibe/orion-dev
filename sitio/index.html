@@ -17,10 +17,28 @@
     
     }
     #info{
-        display:none;
+        /*display:none;*/
     }
     .col{
         font-size: 12px !important;
+    }
+    #registro_input{
+
+    }
+    #info_input{
+        display:none;
+    }
+    #logout_bt{
+        display:none;
+    }
+    #menuTable{
+        display: none;
+    }
+    #horariosTable{
+        display:none;
+    }
+    #checkTable{
+        display:none;
     }
     </style>
     <body>
@@ -32,7 +50,7 @@
                     <div class="clearfix"></div>
                 </header>
                 <nav class="row">
-                    <div class="col col-sm-50 col-25 sm-nav-bottom">
+                    <div class="col col-sm-50 col-25 sm-nav-bottom" >
                         <a id="btn_menu_form" href="javascript();"> Inicia Sesión <span class="sm-hide">o Registrate</span></a>
                     </div>
                     <div class="col col-sm-50 col-25 sm-nav-bottom">
@@ -42,7 +60,7 @@
                         <form class="form" id="total_top">Total <span id="total_bottom">MXN <span  style="color:tomato;font-size:20px;">$</span> <span id="sum" style="color:tomato;font-size:20px;"></span></span></form>
                     </div>
                     <div class="col col-sm-50 col-25">
-                        <button class="button" onclick="ordenar();">Completar Orden</button>
+                        <button class="button" onclick="step2();">Completar Orden</button>
                     </div>
                 </nav>
 
@@ -55,13 +73,13 @@
                                 <div class="text-right sm-show">
                                     <a id="close_login" class="class-h3"><i class="fa fa-times"></i> </a>
                                 </div>
-                                <form action="#" class="form-login">
+                                
                                     <div class="row">
-                                        <div class="col col-100 text-center">
+                                        <div class="login_form col col-100 text-center">
                                             <h2>Iniciar sesión</h2>
                                         </div>
                                     </div>
-                                    <div class="row mt-4 sm-mt-0">
+                                    <div class="login_form row mt-4 sm-mt-0">
                                         <div class="col col-100">
                                             <input class="form-control input-border" type="text" id="_u" name="user" placeholder="USUARIO">
                                         </div>
@@ -71,22 +89,17 @@
                                     </div>
                                     <div class="row">
                                         <div class="col col-100">
-                                            <button onclick="dosignin()" class="button button-nav button-block">Iniciar sesión</button>
+                                            <button onclick="dosignin()" class="login_form button button-nav button-block">Iniciar sesión</button>
+                                            <button id="logout_bt" onclick="dologout()" class="button button-nav button-block">Logout</button>
                                         </div>
                                     </div>
-                                </form>
+                                
                             </div>
                         </div>
 
                         <div class="col col-70 col-sm-100">
-                            <div class="mb-2 mt-2 padding-2 pt-0 pl-1 mr-1  divider-right sm-padding-2 sm-mr-0 sm-divider-right-0 sm-divider-top">
-                                <form action="#">
-                                    <div class="row">
-                                        <div class="col col-100 sm-text-center">
-                                            <h2>Regístrate</h2>
-                                        </div>
-                                    </div>
-                                    <div id="info">
+                            <div id="info_input" class="mb-2 mt-2 padding-2 pt-0 pl-1 mr-1  divider-right sm-padding-2 sm-mr-0 sm-divider-right-0 sm-divider-top">
+                                <div id="info">
                                         <div class="row">
                                             <div class="col-sm-4" >
                                                 <span style="color:black;">Usuario:</span>
@@ -140,7 +153,7 @@
                                           <div class="row">
                                             <div class="col-sm-4" id="">
                                                 <span style="color:black;"></span>
-                                                <span id="console"></span>
+                                                
                                             </div>
                                             <div class="col-sm-4" id="">
                                                 <span style="color:black;">Zona:</span>
@@ -152,49 +165,82 @@
                                             </div>
                                             
                                           </div>
-                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="registro_input" class="mb-2 mt-2 padding-2 pt-0 pl-1 mr-1  divider-right sm-padding-2 sm-mr-0 sm-divider-right-0 sm-divider-top">
+                                
                                     <div class="row">
-                                        <div class="col col-100">
+                                        <div class="col col-100 sm-text-center">
+                                            <h2>Regístrate</h2>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col col-50">
                                             <label for="nombre">Nombre</label>
-                                            <input class="form-control-material" type="text" id="nombre" name="nombre">
+                                            <input class="form-control-material obligatorio" type="text"  name="name">
+                                        </div>
+                                        <div class="col col-50">
+                                            <label for="nombre">Nombre de Usuario</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="username">
                                         </div>
                                     </div>
                                     <div class="row">
+
                                         <div class="col col-50">
                                             <label for="calle">Calle</label>
-                                            <input class="form-control-material" type="text" id="calle" name="calle">
+                                            <input class="obligatorio form-control-material" type="text"  name="calle">
                                         </div>
-                                        <div class="col col-50">
+                                        <div class="col col-25">
                                             <label for="numeroExterior">Número Exterior</label>
-                                            <input class="form-control-material" type="text" id="numeroExterior" name="numeroExterior">
+                                            <input class="obligatorio form-control-material" type="text"  name="noext">
+                                        </div>
+                                        <div class="col col-25">
+                                            <label for="interiorDepartamento">Interior</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="noint">
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col col-100">
-                                            <label for="interiorDepartamento">Interior o Departamento</label>
-                                            <input class="form-control-material" type="text" id="interiorDepartamento" name="interiorDepartamento">
+                                   <div class="row">
+                                         <div class="col col-50">
+                                            <label for="colonia">Colonia</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="colonia">
+                                        </div>
+                                        <div class="col col-25">
+                                            <label for="delegacion">Delegación</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="delegacion">
+                                        </div>
+                                        <div class="col col-25">
+                                            <label for="cp">CP</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="cp">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col col-50">
                                             <label for="email">Email</label>
-                                            <input class="form-control-material" type="text" id="email" name="email">
+                                            <input class="obligatorio form-control-material" type="text"  name="email">
                                         </div>
                                         <div class="col col-50">
-                                            <label for="contrasenia">Contraseña</label>
-                                            <input class="form-control-material" type="password" id="contrasenia" name="contrasenia">
+                                           <label for="email">Teléfono</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="phone">
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                            <div class="col col-50">
+                                           <label for="email">Password</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="password">
                                         </div>
                                     </div>
                                     <div class="row mt-1">
                                         <div class="col col-50 col-sm-100">
-                                            <button class="button button-nav button-block">Registrarme</button>
+                                            <button onclick="dosignup()" class="button button-nav button-block">Registrarme</button>
                                         </div>
                                         <div class="col col-50 col-sm-100">
-                                            <p class="message-success mt-1 text-uppercase">Tu registro fue exitoso!</p>
+                                            <p class="message-success mt-1 text-uppercase" id="console"></p>
                                         </div>
                 
                                     </div>
-                                </form>
+                               
                             </div>
                         </div>
 
@@ -208,14 +254,14 @@
             <div class="container sm-pt-0">
 
 
-                <section class="intro section pt-0 pb-0 mt-0 sm-mt-0 sm-pt-0">
+                <section id="intro" class="intro section pt-0 pb-0 mt-0 sm-mt-0 sm-pt-0">
                     <img src="img/peras.jpg" alt="Ciudad Silvestre">
                     <p class="primary text-lead text-uppercase mt-1 sm-mb-0">
                         Ciudad Silvestre nace con el objetivo de vincular a productores de zonas aledañas a la Ciudad de México con redes de consumo con interés en productos de alta calidad y en trazabilidad de producción.
                     </p>
                 </section>
 
-                <div class="section section-acordion">
+                <div class="section section-acordion" id="menuTable">
                     <div class="productos mb-1">
                         <h2 class="float-left sm-hide">Lista de productos</h2>
                         <form class="form float-right sm-float-left" role="search" method="get" id="searchform" action="http://ciudad-silvestre.superhi.com/">
@@ -229,7 +275,7 @@
                     </div>
                     
                 </div>
-                <section class="horarios section">
+                <section class="horarios section" id="horariosTable">
                     <h2>ELIGE TU DÍA DE ENTREGA</h2>
                     <div class="row mb-1">
                         <div class="col col-20 col-sm-50 sm-mb-05"><span class="horario">LUNES MATUTINO</span></div>
@@ -252,8 +298,11 @@
                         <div class="col col-20 col-sm-50 sm-mb-05 pl-1"><span class="horario">JUEVES NOCTURNO</span></div>
                         <div class="col col-20 col-sm-50 sm-mb-05 pl-1 sm-pl-0"><span class="horario">VIERNES NOCTURNO</span></div>
                     </div>
+                    <div class="row">
+                        <button class="button" onclick="ordenar();">Ordenar</button>
+                    </div>
                 </section>
-                <section class="ticket mb-4 sm-mb-1">
+                <section class="ticket mb-4 sm-mb-1" id="checkTable">
                     <div class="row">
                         <div class="col col-50 col-sm-100">
                             <h2> Tu ticket de compra </h2>
@@ -261,7 +310,7 @@
                                 <p class="mt-0"><span class="class-h3">NÚMERO DE ORDEN:</span> <span class="underline" id="numorden"></span></p>
 
                                 <h3 class="mb-0">LA ENTREGAREMOS EN:</h3>
-                                <img src="img/QR.png" width="160" class="float-right ml-1" />
+                                <!-- <img src="img/QR.png" width="160" class="float-right ml-1" /> -->
                                 <p class="mt-0">
                                     <span id="usr_address"></span><br>
                                     <span id="usr_phone"></span>
@@ -274,15 +323,15 @@
                                 <h3 class="mb-0">TOTAL</h3>
                                 <p class="mt-0">MXN $<span id="total_check"></span></p>
 
-                                <p class="mt-3 sm-mt-2 sm-mb-0"><small class="primary">Puedes seguir tu orden escaneando el código qr. LAS ORDENES se entregan el día jueves de cada semana. En caso de recolección en Ámsterdam 46, el pedido estará listo a partir de las 16:00 hrs.</small></p>
+                                <p class="mt-3 sm-mt-2 sm-mb-0"><small class="primary"><!-- Puedes seguir tu orden escaneando el código qr.  -->Las órdenes se entregan el día jueves de cada semana. En caso de recolección en Ámsterdam 46, el pedido estará listo a partir de las 16:00 hrs.</small></p>
                             </div>
                         </div>
                         <div class="col col-50 col-sm-100 sm-mt-2 sm-pt-1 sm-pt-1 sm-divider-top">
                             <h2 class="pl-2 sm-pl-0"> Siguientes pasos </h2>
                             <div class="padding-2 pl-3 pr-0 pb-0 sm-padding-0 divider-left sm-divider-left-0">
                     
-                                <h3 class="mb-0 mt-0">Finaliza tu pedido</h3>
-                                <p class="mt-0 text-uppercase">Haz click en Completar Orden, si no lo haces, tus productos no serán apartados y pueden agotarse.</p>
+                                <!-- <h3 class="mb-0 mt-0">Finaliza tu pedido</h3>
+                                <p class="mt-0 text-uppercase">Haz click en Completar Orden, si no lo haces, tus productos no serán apartados y pueden agotarse.</p> -->
 
 
                                 <h3 class="mb-0">Procede a realizar el pago, lo puedes hacer de dos formas</h3>
@@ -603,6 +652,7 @@ function ordenar(){
         dataType: 'json',
         success: function (data){
             console.log("DATA",data);
+            step3();
             $("#avisofinal").html('<p>Tu pedido ha sido procesado! Para confirmar tu orden te pedimos enviar tu comprobante de pago y tu número de orden por whatsapp al teléfono: xxxxxx.</p> <p>Si deseas visualizar tu pedido, copia tu número de orden e ingresalo en el siguiente link: <a href="/orden" target="_blank">VISOR</a></p>');
             $("#numorden").text(data.orden);
             $(".regresar").hide();
@@ -643,20 +693,48 @@ function dosignin(){
         success: function (data){
             if(data.username){
                 _USER=data;
-                $("#infousuario").show();
-                $("#loginform").hide();
-                $("#nuevoreg").hide();
+                isuser();
                 for (key in data) {
                     $("#t_"+key).html(data[key]);
                 }
              checkcp(data["cp"]);
-          }
+
+            }
           setCookie("orionuser",data.username,70);
           setCookie("jwt",data.accessToken,70);
           console.log("DATA",data);
+
           
         }
     });
+}
+function isuser(){
+    $("#infousuario").show();
+                $("#loginform").hide();
+                $("#nuevoreg").hide();
+                $("#logout_bt").show();
+                $(".login_form").hide();
+                $("#registro_input").hide();
+                $("#info_input").show();
+                $("#menuTable").show();
+}
+function step1(){
+     $("#horariosTable").hide();
+    $("#menuTable").show();
+}
+function step2(){
+    $("#intro").hide();
+    $("#horariosTable").show();
+    $("#menuTable").hide();
+}
+function step3(){
+    $("#horariosTable").hide();
+    $("#checkTable").show();
+}
+function dologout(){
+    setCookie("orionuser","void",10);
+    setCookie("jwt","void",10);
+    location.reload();
 }
 function checkInfo(){
     jwt=getCookie("jwt");
@@ -673,9 +751,7 @@ function checkInfo(){
           console.log("DATA user",data);
           $("#userinfo").html();
           if(data.username.length>=1){
-            $("#infousuario").show();
-            $("#loginform").hide();
-            $("#nuevoreg").hide();
+            isuser()
             _USER=data;
             zona=$("#zonaenv").html();
             costo=$("#costoenv").html();
@@ -688,6 +764,9 @@ function checkInfo(){
                 // $("#userinfo").append('<div id="t_'+key+'">'+key+'</div><div>'+data[key]+'</div>');
               }
             checkcp(data["cp"]);
+            $("#registro_input").hide();
+            $("#info_input").show();
+            $("#banner_label").html('<a id="btn_menu_form" href="javascript();">  <span class="sm-hide">Usuario</span></a>')
           }
           
           
@@ -709,7 +788,50 @@ function getCookie(cname) {
     }
   }
   return "";
-}      
+}    
+function dosignup(){
+  _R={};
+  vacios="";
+  $( "input.obligatorio" ).each(function() {
+    _R[$( this ).attr("name")]=$( this ).val();
+  });
+  // _R["username"]=_R["phone"]
+  $( ".obligatorio" ).each(function() {
+    val=$( this ).val();
+    if(val==""){
+      vacios+=$( this ).attr("name")+", ";
+      console.log("incompleto",$( this ).attr("name"));
+    }
+  });
+  if(vacios!=""){
+    $("#console").html("faltan los siguientes campos: "+vacios);
+  }
+  else{
+    console.log("log",_R)
+    $.ajax({
+        url: '/api/auth/signup',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(_R),
+        dataType: 'json',
+        error: function(xhr, status, error) {
+          console.log(xhr, status, error);
+          $("#console").html(xhr.responseText);
+          //alert(xhr.responseText);
+        },
+        success: function (data){
+
+          // $(".step2").addClass('d-none');
+          // $(".step3").removeClass('d-none');
+
+          // $("#console2").html("Tu usuario fue creado exitosamente y esta activo! Bienvenido a la red Orion. <a href=\"/\">Haz click aquí para ir al mercado.</a>");
+          
+        }
+    });
+  }
+  
+  
+}  
 
     </script>
 </html>
