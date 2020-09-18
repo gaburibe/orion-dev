@@ -261,10 +261,10 @@ exports.getOrdenesJson= function(callback){
 	
 }
 exports.closeShop=function (callback) {  //CERRAR TIENDA
-	mainmenuDir="./menu/mainmenu.csv";
-	cacheDir="./menu/workingcopy/menu.json";
+	mainmenuDir="menu/mainmenu.csv";
+	cacheDir="menu/workingcopy/menu.json";
 	//TIMESTAMP en segundos
-	archivoDir="./archivo/mainmenu_"+Math.floor(Date.now() / 1000);
+	archivoDir="archivo/mainmenu_"+Math.floor(Date.now() / 1000);
     fs.rename(mainmenuDir, archivoDir, function (err) {
         if (err) {
             if (err.code === 'EXDEV') {
