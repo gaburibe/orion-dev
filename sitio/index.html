@@ -358,7 +358,7 @@
                     <hr>
                     <hr>
                     <div class="row">
-                        <button class="button-order" onclick="ordenar();">Ordenar</button>
+                        <button style="display:none;" class="button-order" onclick="ordenar();">Ordenar</button>
                     </div>
                 </section>
                 <section class="ticket mb-4 sm-mb-1" id="checkTable">
@@ -846,6 +846,7 @@ Date.prototype.addDays = function(days) {
     return date;
 }
 function setShipping(id){
+    $(".button-order").show();
     if(id=="recoleccionTienda"){
         $("#costoenv").html(0);
         makesum();
