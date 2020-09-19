@@ -219,25 +219,34 @@
     }
     .category{
         padding:1em 2em;
-        display: block;
-        float: left;
+        /*display: block;
+        float: left;*/
         font-size: 12px;
         color:#1e824c;
         font-weight:700;
-        border-radius:5px;
+        /*border-radius:5px;*/
         border:1px solid #1e824c;
         text-transform:uppercase;
         transition: all 0.2s ease-out;
         cursor: pointer;
+        height:100px;
+    }
+    .selectorslide{
+        width:100%;
+        overflow-x: scroll;
     }
     #search_categoria{
-        height: 20vh;
+
+        height: 10vh;
     overflow-y: scroll;
     border-radius:5px;
         border:1px solid #1e824c;
     }
+    .constroles{
+        border:1px solid #1e824c;
+    }
     #search_productor{
-        height: 20vh;
+        height: 10vh;
     overflow-y: scroll;
     border-radius:5px;
         border:1px solid #1e824c;

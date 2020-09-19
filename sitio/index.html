@@ -268,16 +268,20 @@
                         <h2>Productores</h2>
                         <br>
                         
-                                <div id="search_productor" style="display: inline-block;">
-                                    
-                                </div>
+                                <table class="selectorslide"  style="display: inline-block;">
+                                    <tr id="search_productor">
+                                        
+                                    </tr>
+                                </table>
                         <h2>Categorías</h2>
                         <br>
                             
-                                <div id="search_categoria" style="display: inline-block;">
-                                   
+                                <table class="selectorslide" style="display: inline-block;">
+                                   <tr id="search_categoria">
+                                       
+                                   </tr>
                                     
-                                </div>
+                                </table>
                         <br> 
                             
                     </div>
@@ -581,10 +585,10 @@ function despliegaMenu(){
     }
     initB();
     for(p in productores){
-        $("#search_productor").append('<div class="category" category="'+p+'" onclick=\'flitercat("'+p+'")\'>'+p+'</div>')
+        $("#search_productor").append('<td class="category" category="'+p+'" onclick=\'flitercat("'+p+'")\'>'+p+'</td>')
     }
     for(c in categorias){
-        $("#search_categoria").append('<div class="category" category="'+c+'" onclick=\'flitercat("'+c+'")\'>'+c+'</div>')
+        $("#search_categoria").append('<td class="category" category="'+c+'" onclick=\'flitercat("'+c+'")\'>'+c+'</td>')
     }
     console.log("-->",productores,categorias);
 }
