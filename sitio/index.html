@@ -262,11 +262,32 @@
                 </section>
 
                 <div class="section section-acordion" id="menuTable">
+                    <div class="controles">
+                        
+                         
+                        <h2>Productores</h2>
+                        <br>
+                        
+                                <div id="search_productor" style="display: inline-block;">
+                                    
+                                </div>
+                        <h2>Categorías</h2>
+                        <br>
+                            
+                                <div id="search_categoria" style="display: inline-block;">
+                                   
+                                    
+                                </div>
+                        <br> 
+                            
+                    </div>
+                    <br>
                     <div class="productos mb-1">
                         <h2 class="float-left sm-hide">Lista de productos</h2>
-                        <form class="form float-right sm-float-left" role="search" method="get" id="searchform" action="http://ciudad-silvestre.superhi.com/">
-                            <input type="text" value="" placeholder="Buscar" class="search text-uppercase class-h2 sm-text-left" id="search">
+                        <form class="form float-right sm-float-left" role="search" method="get" id="searchform" >
+                            <input style="display:none;" type="text" value="" placeholder="Buscar" class="search text-uppercase class-h2 sm-text-left" id="search">
                             <label for="search" class="class-h2"><i class="fa fa-search"></i></label>
+                            <span id="catindicator"></span>
                         </form>
                         <div class="clearfix"></div>
                     </div>
@@ -277,7 +298,43 @@
                 </div>
                 <section class="horarios section" id="horariosTable">
                     <h2>ELIGE TU DÍA DE ENTREGA</h2>
-                    <div class="row mb-1">
+
+                    <table id="tablaHorarios" class="gfgtable">
+                        <tr>
+                            <td class="hor"> Matutino</td>
+                            <td class="hor"> Medio día</td>
+                            <td class="hor"> Vespertino</td>
+                        </th>
+                       <!-- <tr day="1">
+                           <td class="horario">lunes 9 a 12</td>
+                           <td class="horario">lunes 12 a 3</td>
+                           <td class="horario">lunes 3 a 6</td>
+                       </tr> -->
+                       <tr day="2">
+                           <td class="agotado hrb" id="2-matutino">mártes 9 a 12</td>
+                           <td class="agotado hrb" id="2-mediodia">mártes 12 a 3</td>
+                           <td class="agotado hrb" id="2-vespertino">mártes 3 a 6</td>
+                       </tr>
+                       <tr day="3">
+                           <td class="agotado hrb" id="3-matutino">Miércoles 9 a 12</td>
+                           <td class="agotado hrb" id="3-mediodia">Miércoles 12 a 3</td>
+                           <td class="agotado hrb" id="3-vespertino">Miércoles 3 a 6</td>
+                       </tr>
+                       <tr day="4">
+                           <td class="agotado hrb" id="4-matutino">Jueves 9 a 12</td>
+                           <td class="agotado hrb" id="4-mediodia">Jueves 12 a 3</td>
+                           <td class="agotado hrb" id="4-vespertino">Jueves 3 a 6</td>
+                       </tr>
+                       <tr day="5">
+                           <td class="agotado hrb" id="5-matutino">Viernes 9 a 12</td>
+                           <td class="agotado hrb" id="5-mediodia">Viernes 12 a 3</td>
+                           <td class="agotado hrb" id="5-vespertino">Viernes 3 a 6</td>
+                       </tr>
+                       <tr>
+                           <td class="horario hrb" id="recoleccionTienda" colspan="3">Recoger en tienda</td>
+                       </tr>
+                    </table>
+                   <!--  <div class="row mb-1">
                         <div class="col col-20 col-sm-50 sm-mb-05"><span class="horario">LUNES MATUTINO</span></div>
                         <div class="col col-20 col-sm-50 sm-mb-05 pl-1"><span class="horario">MARTES MATUTINO</span></div>
                         <div class="col col-20 col-sm-50 sm-mb-05 pl-1 sm-pl-0"><span class="horario">MIÉRCOLES MATUTINO</span></div>
@@ -297,9 +354,11 @@
                         <div class="col col-20 col-sm-50 sm-mb-05 pl-1 sm-pl-0"><span class="horario">MIÉRCOLES NOCTURNO</span></div>
                         <div class="col col-20 col-sm-50 sm-mb-05 pl-1"><span class="horario">JUEVES NOCTURNO</span></div>
                         <div class="col col-20 col-sm-50 sm-mb-05 pl-1 sm-pl-0"><span class="horario">VIERNES NOCTURNO</span></div>
-                    </div>
+                    </div> -->
+                    <hr>
+                    <hr>
                     <div class="row">
-                        <button class="button" onclick="ordenar();">Ordenar</button>
+                        <button class="button-order" onclick="ordenar();">Ordenar</button>
                     </div>
                 </section>
                 <section class="ticket mb-4 sm-mb-1" id="checkTable">
@@ -396,9 +455,13 @@ _productos={};
 carselected=false;
 _USER={};
 _ZONA="";
+_ENVIO=0;
+_RECOLECCION="Envío";
 $(document).ready(function(){
+    
     makesum();
     getMenu();
+    
     jwt=getCookie("jwt");
 
       if(jwt.length>=2){
@@ -413,6 +476,10 @@ $(document).ready(function(){
       });
       $('input:radio[name=zona]').on("click", function() {
         makesum();
+      });
+      $('.hrb').on("click", function() {
+        id=$(this).attr("id");
+        setShipping(id);
       });
 
 });
@@ -434,10 +501,12 @@ function checkcp(cp){
           console.log(data)
           $("#console").html("");
           _ZONA=data[1];
+          _ENVIO=data[2];
           $("#zonaenv").html(data[1]);
           $("#costoenv").html(data[2]);
           $("#usr_shipping").html("  Zona:"+_ZONA+"<Br>  CP:"+cp+"<Br>  Costo:$"+data[2]);
           makesum();
+          checkTickets();
           // $(".step1").addClass('d-none');
           // $(".step2").removeClass('d-none');
           
@@ -463,8 +532,8 @@ function getMenu(){
 
 function despliegaMenu(){
 
-    productores=[];
-
+    productores={};
+    categorias={};
     for(entry in _MENU){
         originalname=entry;
         nomnew=entry.split("(");
@@ -472,7 +541,7 @@ function despliegaMenu(){
         nomproductor=nomnew[0].trim();
         nomproductor.replace('"','');
 
-        productores.push(nomproductor);
+        productores[nomproductor]=1;
         // if(nomnew[1]){
         //  redes=nomnew[1].replace(")","");
         //  nomproductor='<a href="'+'https://www.instagram.com/'+nomproductor.replace("@","")+'" target="_blank">'+nomproductor+'</a>'
@@ -483,6 +552,7 @@ function despliegaMenu(){
         for(i=0;i<_MENU[entry].length;i++){
             min=1;
             d_=_MENU[entry][i];
+            categorias[d_[4]]=1;
             nomproducto=d_[0].replace("[[[[[[[[[[[AGOTADO]]]]]]]]]]","(AGOTADO)").trim();
             _productos[d_[9]]=[d_[0]+"[|]"+originalname,0,d_[7]]
             //Procesa instagram
@@ -504,13 +574,19 @@ function despliegaMenu(){
             else{
                 
             }
-            trstr='<div class="row" id="'+d_[9]+'"><div  class="col col-25 col-sm-100" style="font-size:16px !important;">'+nomproducto+'</div><div class="col col-20 col-sm-100 sm-mb-1">'+linkSocial+'</div><div class="col col-20 sm-hide">verdura,<br> el renacer del campo</div><div class="col col-15 col-sm-50">mxn <span style="color:tomato;font-size:12px;">'+d_[7]+'</span> / '+d_[1]+'</div><div class="col col-5 sm-hide">'+d_[3]+'</div><div class="col col-15 col-sm-50 sm-text-right"><button class="btn-circle button-m">-</button> <input value="0" type="number" max="'+d_[3]+'" id="tentacles" idrow="'+d_[9]+'" onchange="updateInput(this.value,'+d_[9]+')" class="prInput inputsmall" producer="" product="'+d_[0]+'" name="tentacles"min="0" step="'+min+'" disabled> <button class="btn-circle button-p">+</button></div></div>';
+            trstr='<div class="row productrow" id="'+d_[9]+'"><div  class="col col-25 col-sm-100" style="font-size:16px !important;">'+nomproducto+'</div><div class="col col-20 col-sm-100 sm-mb-1">'+linkSocial+'</div><div class="col col-20 sm-hide catrow">'+d_[4]+', '+nomproductor+'</div><div class="col col-15 col-sm-50">mxn <span style="color:tomato;font-size:12px;">'+d_[7]+'</span> / '+d_[1]+'</div><div class="col col-5 sm-hide">'+d_[3]+'</div><div class="col col-15 col-sm-50 sm-text-right"><button class="btn-circle button-m">-</button> <input value="0" type="number" max="'+d_[3]+'" id="tentacles" idrow="'+d_[9]+'" onchange="updateInput(this.value,'+d_[9]+')" class="prInput inputsmall" producer="" product="'+d_[0]+'" name="tentacles"min="0" step="'+min+'" disabled> <button class="btn-circle button-p">+</button></div></div>';
             $("#tabla_productos").append(trstr)
         }
 
     }
     initB();
-        
+    for(p in productores){
+        $("#search_productor").append('<div class="category" category="'+p+'" onclick=\'flitercat("'+p+'")\'>'+p+'</div>')
+    }
+    for(c in categorias){
+        $("#search_categoria").append('<div class="category" category="'+c+'" onclick=\'flitercat("'+c+'")\'>'+c+'</div>')
+    }
+    console.log("-->",productores,categorias);
 }
 function initB(){
 
@@ -542,6 +618,33 @@ function initB(){
 
 }
 
+_CATSEL="";
+//NAVIGATION
+function flitercat(cat){
+    if(cat==_CATSEL){
+        $("#catindicator").html("");
+        $(".productrow").show();
+        $(".category").removeClass("categorySelected");
+        _CATSEL="";
+    }
+    else{
+        $("#catindicator").html(cat);
+        $(".productrow").show();
+        $(".productrow").each(function( index ) {
+            
+            $(".category").removeClass("categorySelected");
+            $("[category='"+cat+"']").addClass("categorySelected");
+            stringval=$(this).find(".catrow").html();
+            if(!stringval.includes(cat)){
+                $(this).hide();
+            }     
+
+        });
+        _CATSEL=cat;
+    }
+
+    
+}
 
 function togglecar(){
     if(carselected){
@@ -641,7 +744,7 @@ function ordenar(){
         indicaciones=_USER.indicaciones;
         form_total=$("#sum").html();
         envio=Number.parseFloat($("#costoenv").html() );
-        orden={"total":form_total,"envio":envio,"username":_USER.username,"envio":envio,"zona":_ZONA,"usuario_id":_USER.id,"direccion":form_direccion,"indicaciones":indicaciones,"phone":_USER.phone,"email":_USER.email,"orden":_productos}
+        orden={"total":form_total,"envio":envio,"username":_USER.username,"envio":envio,"zona":_ZONA,"usuario_id":_USER.id,"direccion":form_direccion,"indicaciones":indicaciones,"phone":_USER.phone,"email":_USER.email,"recoleccion":_RECOLECCION,"orden":_productos}
         //console.log("_productos",JSON.stringify(orden));
             //var data = _productos;
             $.ajax({
@@ -717,6 +820,7 @@ function isuser(){
                 $("#registro_input").hide();
                 $("#info_input").show();
                 $("#menuTable").show();
+                $("#intro").hide();
 }
 function step1(){
      $("#horariosTable").hide();
@@ -735,6 +839,69 @@ function dologout(){
     setCookie("orionuser","void",10);
     setCookie("jwt","void",10);
     location.reload();
+}
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+function setShipping(id){
+    if(id=="recoleccionTienda"){
+        $("#costoenv").html(0);
+        makesum();
+    }
+    else{
+        $("#costoenv").html(_ENVIO);
+        makesum();
+    }
+    $(".hrb").removeClass("horarioSelected");
+    $("#"+id).addClass("horarioSelected");
+    _RECOLECCION=id;
+    splitter=id.split("-");
+    var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+    day=days[splitter[0]];
+    console.log("shipping",day,splitter[0]);
+}
+function checkTickets(){
+    console.log("checkTickets")
+    $.ajax({
+        url: '/checktickets',
+        type: 'GET',
+        contentType: 'application/json',
+        dataType: 'json',
+        success: function (data){
+        _CALENDARIO=[];
+          console.log("DATA tickets",data);
+          var now = new Date();
+          var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+          numday=now.getDay();
+
+          var day = days[ numday ];
+          console.log(numday,day,"zona",_ZONA);
+
+
+          for(i=0;i<days.length;i++){
+            horarios=data[days[i]];
+            for(horario in horarios){
+                console.log(i+"-"+horario,_ZONA);
+                
+                if(horarios[horario][_ZONA]>0){
+                    $("#"+i+"-"+horario).addClass("horario");
+                    $("#"+i+"-"+horario).removeClass("agotado");
+                    //5-15:00-18:00
+                }
+                
+            }
+            
+            console.log(_CALENDARIO);
+            
+
+          }
+          
+          
+          
+        }
+    });
 }
 function checkInfo(){
     jwt=getCookie("jwt");

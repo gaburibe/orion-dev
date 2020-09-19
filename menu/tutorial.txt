@@ -60,7 +60,7 @@ git fetch --all
 git reset --hard origin/master
 
 
-zip -r ordenes9sep.zip ordenes9sep
+zip -r archivo/ordenes13sep.zip ordenes
 zip -r ordenes16jun.zip ordenes
 
 mv /root/orion/menuManager/ordenes16jun.zip /root/orion/menuManager/archivo/ordenes16jun.zip

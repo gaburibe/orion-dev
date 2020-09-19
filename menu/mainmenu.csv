@@ -1,4 +1,214 @@
-Producto,Unidad,Precio Productores,Existencia Inicial,Categoría,Productor,Ubicación,Precio Comercial,Margen
-Producto fff,Domo 500gr,$12.50,50,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
-Producto 2,Kilo (min 1/2k) ,$11.50,20,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
-Producto 3,Manojo,$11.50,10,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Producto,Unidad,Precio Productores,Existencia Inicial,Categoría,Productor,Ubicación,Precio Ciudad Silvestre,Margen
+Acelga arcoiris,Manojo,$11.50,50.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Aguacate,Kilo (min 1/2k) ,$69.00,30.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$99.00,0.7
+Algafita,Manojo,$11.50,20.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Árnica,Manojo,$11.50,10.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Betabel rojo,Manojo,$34.50,20.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$49.00,0.7
+Calabaza,Kilo (min 1/2k) ,$34.50,20.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$49.00,0.7
+Chile jalapeño,Kilo (min 1/2k) ,$69.00,5.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$99.00,0.7
+Cilantro,Manojo,$34.50,50.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$49.00,0.7
+Col morada,Pieza,$17.25,30.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$25.00,0.7
+Col verde,Pieza,$17.25,30.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$25.00,0.7
+Coliflor blanca,Pieza,$17.25,15.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$25.00,0.7
+Colinabo,Pieza,$17.25,30.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$25.00,0.7
+Crema (500 ml),Pieza,$86.25,10.00,Lácteos,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$123.00,0.7
+Hierbabuena,Manojo,$11.50,10.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Hinojo de hoja,Manojo,$11.50,10.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Jitomate bola,Kilo (min 1/2k) ,$28.75,2.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$41.00,0.7
+Jitomate cherry mix (250 grs),Domo,$29.90,120.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$43.00,0.7
+Jitomate heirloom mix,Kilo (min 1/2k) ,$69.00,10.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$99.00,0.7
+Jitomate saladette,Kilo (min 1/2k) ,$28.75,100.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$41.00,0.7
+Kale toscano,Manojo,$11.50,15.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Manzana,Kilo (min 1/2k) ,$46.00,20.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$66.00,0.7
+Mizuna,Manojo,$11.50,30.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Nopales sin espinas,Pieza,$2.30,500.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$3.00,0.7
+Ortiga,Manojo,$11.50,25.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Pimiento mini bell,Kilo (min 1/2k) ,$69.00,5.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$99.00,0.7
+Pimiento mix,Kilo (min 1/2k) ,$57.50,30.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$82.00,0.7
+Pimiento morron,Kilo (min 1/2k) ,$51.75,15.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$74.00,0.7
+Quelite,Manojo,$11.50,25.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Queso Asadero (450gr),Pieza,$103.50,50.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$148.00,0.7
+Rábano sandía,Manojo,$11.50,10.00,Verdura,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Requesón (500 gr),Pieza,$51.75,40.00,Lácteos,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$74.00,0.7
+Té de monte,Manojo,$11.50,10.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Toronjil,Manojo,$11.50,10.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Tortillas,Docena,$17.25,25.00,Tortillería,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$25.00,0.7
+Verdolaga,Manojo,$11.50,50.00,Verdes,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$16.00,0.7
+Yogurt,1 Litro,$40.25,20.00,Lácteos,EL RENACER DEL CAMPO ( @elrenacerdelcampo),"San Bartolo , Amanalco de Becerra, Edo Mex",$58.00,0.7
+Ajo Seco Organico,Domo 250gr,$33.00,42.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$47.00,0.7
+Albahaca Organica,Manojo,$33.00,49.00,Verdes,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$47.00,0.7
+Alcachofa De Jerusalen Organica,Kilo (min 1/2k) ,$155.00,200.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$221.00,0.7
+Apionabo Organico,Kilo (min 1/2k) ,$30.00,49.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$43.00,0.7
+Arroz Blanco Organico Pijije (1K),Pieza,$65.00,5.00,Varios,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$93.00,0.7
+Arroz Organico Pijije Integral (1K),Pieza,$65.00,65.00,Varios,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$93.00,0.7
+Arúgula Orgánica,Manojo,$34.00,20.00,Verdes,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$49.00,0.7
+Betabel Bicolor Baby Organico,Kilo (min 1/2k) ,$66.00,8.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$94.00,0.7
+Betabel Rojo Baby Organico,Kilo (min 1/2k) ,$66.00,5.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$94.00,0.7
+Carne Para Hamburguesa De Bisonte Cross Vaca Libre,Pieza,$295.00,44.00,Proteínas,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$421.00,0.7
+Carne Seca Enchilada De Bufala Organica,Pieza,$95.00,6.00,Proteínas,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$136.00,0.7
+Elote Organico,Pieza,$11.00,80.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$16.00,0.7
+Elote Organico Baby,Pieza,$5.00,30.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$7.00,0.7
+Esparrago Organico (250 gr),Manojo,$50.00,5.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$71.00,0.7
+Flor De Brocolini Organica,Manojo,$11.00,10.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$16.00,0.7
+Harina De Centeno Organica,Kilo (min 1/2k) ,$100.00,73.00,Varios,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$143.00,0.7
+Harina Spelta Organica,Kilo (min 1/2k) ,$180.00,49.00,Varios,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$257.00,0.7
+Lima Organica,Kilo (min 1/2k) ,$44.00,3.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$63.00,0.7
+Mantequilla S/Sal,Pieza,$55.00,14.00,Lácteos,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$79.00,0.7
+Menta Deshidratada Organica,Manojo,$25.00,24.00,Verdes,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$36.00,0.7
+Nuez De Macadamia Organica (500 gr),Pieza,$280.00,16.00,Varios,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$400.00,0.7
+Pimiento Shishito Organico,Domo 250gr,$30.00,60.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$43.00,0.7
+Roast Beef (259gr),Pieza,$210.00,6.00,Proteínas,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$300.00,0.7
+Zanahoria Baby Bicolor Organica,Kilo (min 1/4k) ,$100.00,6.00,Verdura,ALMA TIERRA (@almatierra.mx),"Avándaro, Valle de Bravo",$143.00,0.7
+Acelga China (Bok Choy aprox 250 gr) ,Pieza,$20.00,50.00,Verdes,AGROELITE (FB: Agroelite Mexico),Morelos,$29.00,0.7
+Ajo morado (Cabeza),Pieza,$12.50,50.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$18.00,0.7
+Albahaca (100 gr),Manojo,$18.00,50.00,Verdes,AGROELITE (FB: Agroelite Mexico),Morelos,$26.00,0.7
+Alcachofa mediana,Pieza,$25.00,20.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$36.00,0.7
+Berenjena (500 gr),Pieza,$25.00,20.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$36.00,0.7
+BlueBerry,Tazón 200gr,$59.00,40.00,Fruta,AGROELITE (FB: Agroelite Mexico),Morelos,$84.00,0.7
+Brocoli,Pieza,$17.00,40.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$24.00,0.7
+Cebolla Blanca,Kilo (min 1/2k) ,$18.00,30.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$26.00,0.7
+Chalote (80gr),Pieza,$10.00,50.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$14.00,0.7
+Chile Poblano,Kilo (min 1/2k) ,$27.00,40.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$39.00,0.7
+Cilantro,Manojo,$16.00,50.00,Verdes,AGROELITE (FB: Agroelite Mexico),Morelos,$23.00,0.7
+Col de Bruselas,Kilo (min 1/4k) ,$55.00,30.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$79.00,0.7
+Ejote baby,Domo,$60.00,30.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$86.00,0.7
+Espinaca baby,Domo (220 gr),$50.00,50.00,Verdes,AGROELITE (FB: Agroelite Mexico),Morelos,$71.00,0.7
+Fresa,Tazón 500gr,$28.71,60.00,Fruta,AGROELITE (FB: Agroelite Mexico),Morelos,$41.00,0.7
+Hoja Santa (250 gr),Manojo,$18.00,20.00,Verdes,AGROELITE (FB: Agroelite Mexico),Morelos,$26.00,0.7
+Huitlacoche,Tazón 500gr,$30.00,40.00,Hongos,AGROELITE (FB: Agroelite Mexico),Morelos,$43.00,0.7
+Jitomate Bola en Rácimo,Kilo (min 1/2k) ,$30.00,60.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$43.00,0.7
+Lechuga Italiana,Pieza,$8.00,50.00,Verdes,AGROELITE (FB: Agroelite Mexico),Morelos,$11.00,0.7
+Limón Verde sin semilla,Kilo (min 1/2k) ,$25.00,40.00,Fruta,AGROELITE (FB: Agroelite Mexico),Morelos,$36.00,0.7
+Mango Paraíso,Kilo (min 1/2k) ,$25.00,60.00,Fruta,AGROELITE (FB: Agroelite Mexico),Morelos,$36.00,0.7
+Miel de Maguey (500 ml): aguamiel raspada y concentrada mediante ligero hervor,Pieza,$55.00,20.00,Conservas,AGROELITE (FB: Agroelite Mexico),Morelos,$79.00,0.7
+Papaya (800 gr),Pieza,$20.00,40.00,Fruta,AGROELITE (FB: Agroelite Mexico),Morelos,$29.00,0.7
+Pepino,Pieza,$12.50,50.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$18.00,0.7
+Pera Mantequilla,Kilo (min 1/2k) ,$45.00,40.00,Fruta,AGROELITE (FB: Agroelite Mexico),Morelos,$64.00,0.7
+Pimiento Morrón (250 gr),Pieza,$12.00,50.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$17.00,0.7
+Piña,Pieza,$35.00,50.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$50.00,0.7
+Poro,Pieza,$15.00,30.00,Verdura,AGROELITE (FB: Agroelite Mexico),Morelos,$21.00,0.7
+Sandía Baby sin semilla (800 gr),Pieza,$45.00,20.00,Fruta,AGROELITE (FB: Agroelite Mexico),Morelos,$64.00,0.7
+Seta blanca,Domo 500gr,$28.27,30.00,Hongos,AGROELITE (FB: Agroelite Mexico),Morelos,$40.00,0.7
+Zarzamora,Tazón 200gr,$53.04,40.00,Fruta,AGROELITE (FB: Agroelite Mexico),Morelos,$76.00,0.7
+Orégano de la Mixteca seco (10gr),Manojo,$31.00,10.00,Verdes,SEXTO COLECTIVO (@sexto_colectivo),"Sierra Mixteca, Oaxaca",$44.00,0.7
+Laurel de la Mixteca seco (10gr),Manojo,$31.00,10.00,Verdes,SEXTO COLECTIVO (@sexto_colectivo),"Sierra Mixteca, Oaxaca",$44.00,0.7
+Tuna Verde,Kilo (min 1/2k) ,$18.00,25.00,Fruta,EL JARDIN DEL AXOLOTE,"Tulancingo, Hidalgo",$26.00,0.7
+"Flores Comestibles (20 piezas: mastuerzo, lavanda, hinojo, citronela)",Domo,$50.00,10.00,Verdes,EL JARDIN DEL AXOLOTE,CDMX,$71.00,0.7
+Acedera,Manojo,$11.50,2.00,Verdes,EL JARDIN DEL AXOLOTE,CDMX,$16.00,0.7
+Toronjil,Manojo,$11.50,2.00,Verdes,EL JARDIN DEL AXOLOTE,CDMX,$16.00,0.7
+Cedrón,Manojo,$11.50,10.00,Verdes,EL JARDIN DEL AXOLOTE,CDMX,$16.00,0.7
+Lavanda (hoja),Manojo,$11.50,10.00,Verdes,EL JARDIN DEL AXOLOTE,CDMX,$16.00,0.7
+Mastuerzo (hoja sabor rábano floral),Manojo,$11.50,10.00,Verdes,EL JARDIN DEL AXOLOTE,CDMX,$16.00,0.7
+Semilla de Hinojo (10gr),Pieza,$30.00,4.00,Verdes,EL JARDIN DEL AXOLOTE,CDMX,$43.00,0.7
+Mermelada de Ciruela (235 ml),Pieza,$70.00,20.00,Verdes,EL JARDIN DEL AXOLOTE,CDMX,$100.00,0.7
+Pollo Libre Pastoreo ( Aprox. 2K),Pieza,$270.00,20.00,Proteínas,DISEÑO AMBIENTAL REGENERATIVO ( @disenoambientalregenerativo),"La Joya Valle de Bravo, Méx.",$360.00,0.75
+Medio Pollo Libre Pastoreo ( Aprox. 1K),Pieza,$145.00,40.00,Proteínas,DISEÑO AMBIENTAL REGENERATIVO ( @disenoambientalregenerativo),"La Joya Valle de Bravo, Méx.",$193.00,0.75
+Pechuga de Pollo ( Aprox 750gr),Pieza,$150.00,6.00,Proteínas,DISEÑO AMBIENTAL REGENERATIVO ( @disenoambientalregenerativo),"La Joya Valle de Bravo, Méx.",$200.00,0.75
+"Paquete de piezas: piernas, muslos y alas (Aprox 700gr)",Pieza,$150.00,6.00,Proteínas,DISEÑO AMBIENTAL REGENERATIVO ( @disenoambientalregenerativo),"La Joya Valle de Bravo, Méx.",$200.00,0.75
+Paquete para caldo: huacal y patas (Aprox 700gr),Pieza,$90.00,6.00,Proteínas,DISEÑO AMBIENTAL REGENERATIVO ( @disenoambientalregenerativo),"La Joya Valle de Bravo, Méx.",$120.00,0.75
+Hummus (225gr),Pieza,$70.00,7.00,Varios,SAHUMERIO (@sahumeriocatering),CDMX,$100.00,0.7
+Hummus Limón (225gr),Pieza,$70.00,7.00,Varios,SAHUMERIO (@sahumeriocatering),CDMX,$100.00,0.7
+Humus de Betabel (225gr),Pieza,$70.00,7.00,Varios,SAHUMERIO (@sahumeriocatering),CDMX,$100.00,0.7
+Lebneh con Cascara de Naranja y Salvia (225g),Pieza,$88.00,3.00,Varios,SAHUMERIO (@sahumeriocatering),CDMX,$126.00,0.7
+Tzatziki (salsa griega de yogurt y pepino) 225,Pieza,$70.00,7.00,Varios,SAHUMERIO (@sahumeriocatering),CDMX,$100.00,0.7
+Dip de Aguacate con Queso (225g),Pieza,$70.00,7.00,Varios,SAHUMERIO (@sahumeriocatering),CDMX,$100.00,0.7
+Queso Tipo Manchego Fresco (250 gr),Pieza,$45.00,10.00,Lácteos,Rancho 4 Encinos ( @ranchocuatroencinos),"Zacatlán, Puebla",$64.00,0.7
+Queso Tipo Crottin,Pieza,$60.00,8.00,Lácteos,Rancho 4 Encinos ( @ranchocuatroencinos),"Zacatlán, Puebla",$86.00,0.7
+Queso Ricotta （500 gr）,Pieza,$80.00,4.00,Lácteos,Rancho 4 Encinos ( @ranchocuatroencinos),"Zacatlán, Puebla",$114.00,0.7
+Queso de Montaña Joven (250 gr),Pieza,$75.00,8.00,Lácteos,Rancho 4 Encinos ( @ranchocuatroencinos),"Zacatlán, Puebla",$107.00,0.7
+Queso Camembert,Pieza,$90.00,7.00,Lácteos,Rancho 4 Encinos ( @ranchocuatroencinos),"Zacatlán, Puebla",$129.00,0.7
+Queso de Montaña con Trufa (250 gr),Pieza,$85.00,8.00,Lácteos,Rancho 4 Encinos ( @ranchocuatroencinos),"Zacatlán, Puebla",$121.00,0.7
+Yougurt Espeso (1 Litro) ,1 Litro,$95.00,4.00,Lácteos,Rancho 4 Encinos ( @ranchocuatroencinos),"Zacatlán, Puebla",$136.00,0.7
+Queso Oaxaca (500 gr),Pieza,$75.00,20.00,Lácteos,QUESOS CUENCA (@quesoscuenca),"Jiotepec, Edo. Mex.",$107.00,0.7
+Queso Cabra Cenizo (200 gr),Pieza,$45.00,20.00,Lácteos,QUESOS CUENCA (@quesoscuenca),"Jiotepec, Edo. Mex.",$64.00,0.7
+Queso Panela (500 gr),Pieza,$70.00,10.00,Lácteos,QUESOS CUENCA (@quesoscuenca),"Jiotepec, Edo. Mex.",$100.00,0.7
+Dulce de leche (235 ml),Pieza,$80.00,10.00,Conservas,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$114.00,0.7
+Mermelada de Fresa (235 ml),Pieza,$70.00,10.00,Conservas,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$100.00,0.7
+Mermelada de Cebolla (235 ml),Pieza,$65.00,10.00,Conservas,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$93.00,0.7
+Mermelada de Naranja (235 ml),Pieza,$45.00,10.00,Conservas,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$64.00,0.7
+Mermelada de Manzana (235 ml),Pieza,$80.00,10.00,Conservas,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$114.00,0.7
+Rol de Canela: 3 piezas (400gr),Pieza,$60.00,20.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$86.00,0.7
+Rol de Canela con Manzana: 3 piezas (400gr),Pieza,$75.00,20.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$107.00,0.7
+Panquecito de plátano con nuez y arándanos: 3 piezas (400gr),Pieza,$75.00,20.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$107.00,0.7
+Pan de masa madre con granos de café y chocolate (250gr),Pieza,$60.00,20.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$86.00,0.7
+"Hogaza (pan de campo 450gr): agua, harina de trigo, sal, masa madre",Pieza,$35.00,50.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$50.00,0.7
+"Baguette (200gr): agua, sal, harina de trigo, masa madre",Pieza,$20.00,30.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$29.00,0.7
+"Pan de caja blanco (750gr): leche, huevo, mantequilla, harina de trigo, azúcar, sal, levadura",Pieza,$65.00,20.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$93.00,0.7
+"Pan de caja integral (750gr): leche, huevo, mantequilla, harina de trigo, azúcar, sal, levadura",Pieza,$65.00,20.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$93.00,0.7
+"Pan de caja de centeno (750gr): centeno, leche, azucar, sal, levadura, pasas, nueces, almendras",Pieza,$105.00,20.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$150.00,0.7
+"Pasta Fresca Fettuccini (500gr): agua, semolina, harina de trigo, huevo, aceite, sal, levadura",Pieza,$50.00,20.00,Panadería,PARRILLA PARAISO ( @parrillaparaiso),CDMX,$71.00,0.7
+"Salchichas Bratwurst (carne de cerdo con diez condimentos) 4 salchichas, 800gr",Pieza,$110.00,15.00,Proteínas,CELESTIAL (@salchichascelestial),CDMX,$157.00,0.7
+"Currywurst (carne de cerdo, con el sabor suave y dulce del curry) 4 salchichas, 800gr",Pieza,$110.00,15.00,Proteínas,CELESTIAL (@salchichascelestial),CDMX,$157.00,0.7
+"Rindswurst (carne de res condimentada, con ajo y paprika, ligeramente picante, envuelta en tripa de cerdo) 4 salchichas, 800gr",Pieza,$140.00,15.00,Proteínas,CELESTIAL (@salchichascelestial),CDMX,$200.00,0.7
+"Weisswurst (carne de ternera, notas de cebolla y perejil, textura suave) 4 salchichas, 800gr",Pieza,$140.00,15.00,Proteínas,CELESTIAL (@salchichascelestial),CDMX,$200.00,0.7
+"Lomito madurado (200g): Elaborado con carne junto al espinazo y bajo las costillas del cerdo, curado con sal de mar y azúcar, adobado con especias y hierbas, sin conservantes ni aditivos, ahumado ligeramente.",Pieza,$129.00,7.00,Varios,DON PAPU (@donpapu2020),CDMX,$170.00,0.76
+"Bondiola Italiana (200g): Elaborada con carne y grasa del cuello de cerdo, sin conservantes ni aditivos, madurado con sal de mar de mar y azúcar, desalinizado por 3 días, secado entre 30 y 60 días. ",Pieza,$129.00,7.00,Varios,DON PAPU (@donpapu2020),CDMX,$170.00,0.76
+"Salami Genovés (200g): Elaborado con 60% de carne magra de cerdo y 40% magra de res, se mezclan con granos de pimienta negra, ajo en polvo, vino y sal. ",Pieza,$152.00,7.00,Varios,DON PAPU (@donpapu2020),CDMX,$200.00,0.76
+Trucha Steelhead Blanca Filete c/piel: fresca al vacio paq con 2 filetes (500 gr),Pieza,$185.00,10.00,Proteínas,MESA RURAL (@lamesarural),"Atesquelites, Edo Mex",$231.00,0.8
+Láminas de Trucha Steelhead Ahumada en Frío con Nogal: sin congelar al vacio (250 gr),Pieza,$225.00,10.00,Proteínas,MESA RURAL (@lamesarural),"Atesquelites, Edo Mex",$281.00,0.8
+Dip/Spread de Trucha Ahumada (250 gr),Pieza,$135.00,10.00,Proteínas,MESA RURAL (@lamesarural),"Atesquelites, Edo Mex",$169.00,0.8
+Mantequilla de Mani: cacahuate orgánico y un toque de miel (250 gr),Pieza,$125.00,10.00,Conservas,MESA RURAL (@lamesarural),"Valle de Bravo, Edo Mex",$179.00,0.7
+Limón Amarillo,Kilo (min 1/2k) ,$50.00,10.00,Fruta,MESA RURAL (@lamesarural),"Ixtapan de la Sal, Edo Mex",$71.00,0.7
+Falafel de haba agroecológica: 12 piezas al vacio (250 gr),Pieza,$90.00,15.00,Guisados,MESA RURAL (@lamesarural),"Valle de Bravo, Edo Mex",$129.00,0.7
+Esquite Estilo Europeo: con vino blanco y maiz agroecológico empacado al vació listo para servir (1 kg),Pieza,$120.00,10.00,Guisados,MESA RURAL (@lamesarural),"Valle de Bravo, Edo Mex",$171.00,0.7
+"Tortilla Mixta de Máquina: amarilla, azul (1/2k)",Pieza,$18.00,40.00,Tortillería,MAIZAJO (@maizajo),CDMX,$26.00,0.7
+Tostadas Comaleadas: cualquier color (15 piezas),Pieza,$25.00,20.00,Tortillería,MAIZAJO (@maizajo),CDMX,$36.00,0.7
+Totopos: cualquier color (1/4k),Pieza,$25.00,20.00,Tortillería,MAIZAJO (@maizajo),CDMX,$36.00,0.7
+Sopes (12 piezas),Pieza,$30.00,20.00,Tortillería,MAIZAJO (@maizajo),CDMX,$43.00,0.7
+Tlacoyos : haba y frijol (4 piezas),Pieza,$80.00,20.00,Guisados,MAIZAJO (@maizajo),CDMX,$114.00,0.7
+Gorditas: chicharrón y suadero (5 piezas),Pieza,$115.00,20.00,Guisados,MAIZAJO (@maizajo),CDMX,$164.00,0.7
+Enchiladas Potosinas,Pieza,$120.00,20.00,Guisados,MAIZAJO (@maizajo),CDMX,$171.00,0.7
+"Salsa Chipotle Dulce: cebolla, ajo, piloncillo, chipotle meco, cerveza, aceite de palma (200 ml)",Pieza,$65.00,10.00,Conservas,PROFANO (@profano.cdmx),CDMX,$93.00,0.7
+"Salsa Habanero con Almendra: habanero, almendra, vino blanco, cebolla, ajo, aceite de ajonjolí (110 ml)",Pieza,$65.00,10.00,Conservas,PROFANO (@profano.cdmx),CDMX,$93.00,0.7
+"Salsa Macha: cacahuate, pepita, amaranto, cebolla, chile guajillo, chile de árbol, ajo, aceite de palma (220 ml)",Pieza,$65.00,10.00,Conservas,PROFANO (@profano.cdmx),CDMX,$93.00,0.7
+"Verduras Encurtidas: papa, nopal, zanahoria, chile cuaresmeño, cebolla, ajo, jengibre, vinagre blanco, aceite de palma (400 ml)",Pieza,$70.00,10.00,Conservas,PROFANO (@profano.cdmx),CDMX,$100.00,0.7
+"Tortilla de Harina: nata, harina de trigo, leche (480gr)",Pieza,$73.00,20.00,Conservas,PROFANO (@profano.cdmx),CDMX,$104.00,0.7
+"Chile en Nogada de Res (350gr): molida de res, manzana, pera, plátano, durazno, almendra, pasas, jitomate, cebolla, acitrón, arándanos, 100ml salsa de nogada, 50gr granada",Pieza,$140.00,10.00,Guisados,PROFANO (@profano.cdmx),CDMX,$187.00,0.75
+"Chile en Nogada de Cerdo (350gr): deshebrada de cerdo, manzana, pera, plátano, durazno, almendra, pasas, jitomate, cebolla, acitrón, arándanos, 100ml salsa de nogada, 50gr granada ",Pieza,$140.00,10.00,Guisados,PROFANO (@profano.cdmx),CDMX,$187.00,0.75
+"Chile en Nogada Vegetariano (350gr): selección de hongos, manzana, pera, plátano, durazno, almendra, pasas, jitomate, cebolla, acitrón, arándanos, 100ml salsa de nogada, 50gr granada",Pieza,$140.00,10.00,Guisados,PROFANO (@profano.cdmx),CDMX,$187.00,0.75
+"Salsa de Nogada (400ml) 3 días de consumo preferente: jerez, almendra, nuez de Castilla, crema, leche, queso crema",Pieza,$65.00,10.00,Guisados,PROFANO (@profano.cdmx),CDMX,$93.00,0.7
+"Pesto de Cilantro: cilantro, almendras, cacahuates, aceite de oliva, ajo y sal marina (235gr)",Pieza,$90.00,30.00,Conservas,LA CUMBRE (FB: La Cumbre Conservas),CDMX,$129.00,0.7
+"Pesto de Albahaca: albahaca, nuez pecana, almendras, aceite de oliva, ajo y sal marina (235gr)",Pieza,$90.00,30.00,Conservas,LA CUMBRE (FB: La Cumbre Conservas),CDMX,$129.00,0.7
+"Chimichurri Especiado: perejil, aceite multigrano, ajo, sal marina, vinagre y especias (235gr)",Pieza,$90.00,30.00,Conservas,LA CUMBRE (FB: La Cumbre Conservas),CDMX,$129.00,0.7
+"Salsa Huérfana: chipotles tostados a la leña, ajo, aceite multigrano y sal marina (250gr)",Pieza,$90.00,30.00,Conservas,LA CUMBRE (FB: La Cumbre Conservas),CDMX,$129.00,0.7
+"Granola Clásica Horneada: avena, almendra, cacahuate, pepita, amaranto, arándano, pasas golden, canela, miel (330gr)",Pieza,$100.00,20.00,Varios,MISHA (@mishadesdecero),CDMX,$143.00,0.7
+"Granola Gourmet Horneada: avena, almendra, cacahuate, chabacano, piña, coco, nibs de cacao, flor de sal, chips de chocolate semiamargo, miel (233gr)",Pieza,$100.00,20.00,Varios,MISHA (@mishadesdecero),CDMX,$143.00,0.7
+Miel de Abeja (500 ml): multifloral de las Chinampas de Don Lauro Rivera,Pieza,$174.00,6.00,Conservas, RUTA ORIGEN (@rutaorigen),"Tlacoapa, Xochimilco",$218.00,0.8
+Mazapán de cacahuate ,Pieza,$20.00,50.00,Varios,Mazapanes Artesanales Roy,CDMX,$25.00,0.8
+"Energizapán de cacahuate, amaranto, miel de agave, nuez, almendra, quinoa, fresa, chía, arándano, jamaica, acaí, nuez pecana, coco",Pieza,$20.00,50.00,Varios,Mazapanes Artesanales Roy,CDMX,$25.00,0.8
+"Choco-energizapán de cacahuate, chocolate amargo, amaranto, miel de agave, nuez, almendra, quinoa, fresa, chía, arándano, jamaica, acaí, nuez pecana, coco",Pieza,$20.00,50.00,Varios,Mazapanes Artesanales Roy,CDMX,$25.00,0.8
+Betabel Deshidratado (bolsa),Pieza,$45.00,20.00,Botanas,DULCE PLACER (@dulceplacermx),Morelos,$64.00,0.7
+Betabel Enchilado Deshidratado (bolsa),Pieza,$45.00,20.00,Botanas,DULCE PLACER (@dulceplacermx),Morelos,$64.00,0.7
+Camote Deshidratado (bolsa),Pieza,$45.00,20.00,Botanas,DULCE PLACER (@dulceplacermx),Morelos,$64.00,0.7
+Camote Enchilado Deshidratado (bolsa),Pieza,$45.00,20.00,Botanas,DULCE PLACER (@dulceplacermx),Morelos,$64.00,0.7
+Mango Deshidratado (125gr),Pieza,$25.00,20.00,Botanas,DULCE PLACER (@dulceplacermx),Morelos,$36.00,0.7
+Mango Deshidratado Enchilado (125gr),Pieza,$27.00,20.00,Botanas,DULCE PLACER (@dulceplacermx),Morelos,$39.00,0.7
+Plátano Deshidratado Chips (125gr),Pieza,$45.00,20.00,Botanas,DULCE PLACER (@dulceplacermx),Morelos,$64.00,0.7
+Café en grano: Dark Side of the Fruit (250g),Pieza,$135.00,25.00,Varios,CUCURUCHO (@cucuruchocafe),CDMX,$193.00,0.7
+Café en grano: Veracruz (250g),Pieza,$135.00,25.00,Varios,CUCURUCHO (@cucuruchocafe),CDMX,$193.00,0.7
+Café en grano: Chiapas (250g),Pieza,$100.00,25.00,Varios,CUCURUCHO (@cucuruchocafe),CDMX,$143.00,0.7
+Café molido: Mezcla de la Casa (250g),Pieza,$110.00,25.00,Varios,CUCURUCHO (@cucuruchocafe),CDMX,$157.00,0.7
+"Café molido: tostado medio, Veracruz (250g)",Pieza,$92.00,25.00,Varios,PRAGA 29 (@cafepraga29),CDMX,$121.00,0.76
+"Café molido descafeinado: tostado medio, Veracruz (250g)",Pieza,$120.00,25.00,Varios,PRAGA 29 (@cafepraga29),CDMX,$156.00,0.77
+"Café en grano: tostado medio, Veracruz (250g)",Pieza,$92.00,25.00,Varios,PRAGA 29 (@cafepraga29),CDMX,$121.00,0.76
+"Cerveza Blanca de Maguey-IPA Blanca-7% Alc. Vol.-con maguey, cascara de naranja y semilla de cilantro",Botella 355 ml,$40.00,24.00,Bebidas,MONSTRUO DE AGUA (@monstruo.de.agua) ,CDMX,$53.00,0.75
+"Cerveza Sugoi-Ale Clara-5%Alc. Vol.-con maguey, jengibre, té limón",Botella 355 ml,$40.00,24.00,Bebidas,MONSTRUO DE AGUA (@monstruo.de.agua) ,CDMX,$53.00,0.75
+"Cerveza Higo Pils-Lager clara-5.0%Alc. Vol.-con miel de maguey, avena y hoja de higo",Botella 355 ml,$48.00,12.00,Bebidas,MONSTRUO DE AGUA (@monstruo.de.agua) ,CDMX,$64.00,0.75
+Cerveza NoMamey-Lager Oscura con mamey-5.4%Alc. Vol.,Botella 355 ml,$56.00,12.00,Bebidas,MONSTRUO DE AGUA (@monstruo.de.agua) ,CDMX,$75.00,0.75
+"Soda Probiótica Jengibre: contiene 10 microorganismos benéficos, no es dulce, 20 calorías.",Botella 355 ml,$30.00,24.00,Bebidas,CHINAMPA(@chinampa.mx) ,CDMX,$40.00,0.75
+"Soda Probiótica Lima: contiene 10 microorganismos benéficos, no es dulce, 20 calorías.",Botella 355 ml,$30.00,24.00,Bebidas,CHINAMPA(@chinampa.mx) ,CDMX,$40.00,0.75
+"Soda Manzanilla: flor de manzanilla de OHA y miel de caña fermentado con nuestra levadura de la casa. Cerveza Gluten-Free, 20 calorías. ",Botella 355 ml,$30.00,24.00,Bebidas,CHINAMPA(@chinampa.mx) ,CDMX,$40.00,0.75
+"Soda Chai: selección chai de OHA y miel de caña fermentado con nuestra levadura de la casa. Cerveza Gluten-Free, 20 calorías. ",Botella 355 ml,$30.00,24.00,Bebidas,CHINAMPA(@chinampa.mx) ,CDMX,$40.00,0.75
+"Té Verde-Limón: té verde (sencha), zacate limón y hierbabuena (bolsa de 50 gr, 20-25 tazas)",Pieza,$112.00,6.00,Bebidas,OHA (@oha.mx),CDMX,$160.00,0.7
+"Té Masala Chai: té negro, jengibre, canela, clavo, cardamomo y cacao (bolsa de 50 gr, 20-25 tazas)",Pieza,$112.00,6.00,Bebidas,OHA (@oha.mx),CDMX,$160.00,0.7
+"Té Cedrón-Romero: mezcla digestiva, cultivadas de Malinalco (bolsa 30 gr, 15-18 tazas)",Pieza,$87.50,6.00,Bebidas,OHA (@oha.mx),CDMX,$125.00,0.7
+"Té Cúrcuma-Jengibre: ideal para Golden Milk, incluye cardamomo y pimienta (bolsa de 50 gr, 20-25 tazas)",Pieza,$112.00,6.00,Bebidas,OHA (@oha.mx),CDMX,$160.00,0.7
+"Tintura madre de Jengibre Fresco: para cocincar, salsas y vinagretas, antiviral, inmune, digestivo, nauseas,",Botella 30 ml,$100.00,20.00,Bebidas,CREATURAS BOTANICAS (@creaturasbotanicas),CDMX,$133.00,0.75
+"Tintura madre de Toronjil: sueños, relajación, insomnio",Botella 30 ml,$100.00,20.00,Bebidas,CREATURAS BOTANICAS (@creaturasbotanicas),CDMX,$133.00,0.75
+"Tintura madre de Cedrón: insomnio, ansiedad, digestion",Botella 30 ml,$100.00,20.00,Bebidas,CREATURAS BOTANICAS (@creaturasbotanicas),CDMX,$133.00,0.75
+"Tintura madre de Te-Limón con Jengibre: digestiva, nutritiva, energizante, anti-inflamatoria",Botella 30 ml,$100.00,20.00,Bebidas,CREATURAS BOTANICAS (@creaturasbotanicas),CDMX,$133.00,0.75
+"Tintura madre de Cardamomo: energizante, ánimo",Botella 30 ml,$100.00,20.00,Bebidas,CREATURAS BOTANICAS (@creaturasbotanicas),CDMX,$133.00,0.75
+"Tintura madre Hoja de Frambuesa: regular presión, digestión, desinflamatorio, dermatitits (uso interno)",Botella 30 ml,$100.00,20.00,Bebidas,CREATURAS BOTANICAS (@creaturasbotanicas),CDMX,$133.00,0.75
+Revista @skypunk.gedatsu | Revista/catálogo de arte basada en la Ciudad de México,Pieza,$125.00,4.00,Varios,@skypunk.gedatsu,CDMX,$125.00,1
+"Papel de Abeja reusable para envolver alimentos y mantener su frescura (contiene 4 piezas grande 30x40cm, mediana 25x30cm, chica 20x15cm, mini 7x5cm)",Pieza,$324.80,5.00,Varios,PAPEL DE ABEJA (@papeldeabeja),CDMX,$406.00,0.8
+Canasta Pendiente (donación de una depensa para familias en comunidades marginadas),Pieza,$160.00,20.00,Apoyo solidario,Proyecto Canasta Pendiente,CDMX,$200.00,0.8

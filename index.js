@@ -46,37 +46,125 @@ var kokoro = require('./dbindex');
 kokoro.connectDB();
 menuManager.inicializa();
 makezones();
+makeservices();
 
 
+//ZONAS
+function makeservices(){
+	IN_file="mensajeria/servicios.csv";
+	rownum=0;
+	result={}
+	obj2={}
+	dias=[];
+	if (!fs.existsSync('mensajeria/servicios.json')) {
+		rownum=0;
+	    csv
+		 .parseFile(IN_file,{ delimiter:','})  
+		 .on("data", function(data){
+		 	console.log("miau",rownum,data)
+		 	if(rownum==1){
+		 		console.log(data);
+		 		for(i=2;i<data.length;i++){
+		 			spdia=data[i].split("|");
+		 			console.log(spdia);
+		 			if(!result[spdia[0]]){	result[spdia[0]]={};	}
+		 			result[spdia[0]][spdia[1]]={}
+		 			dias[i]=data[i];
+		 		}
+		 		rownum+=1;
+		 	}
+		 	else{
+		 		zona=data[1];
+		 		for(i=2;i<data.length;i++){
+		 			spdia=dias[i].split("|");
+		 			result[spdia[0]][spdia[1]][zona]=data[i];
+		 		}
+		 		rownum+=1;
+		 	}
+		 	
+		 		 	
+		 })	
+		 .on("end", function(){
 
+		 	data = JSON.stringify(result);
+		 	console.log(data)
+			fs.writeFile('mensajeria/servicios.json', data, (err) => {
+			    if (err) throw err;
+			    console.log('Servicios written to file');
+			});
+		 	//return (obj);
+		 	// this.codigosPostales=obj;
+		 	// console.log("_zones loaded_",this.codigosPostales)
+		 })
+	}
+	else{
+		console.log("services exists")
+	}
+}
+function updateTickets(key,zona){
+	var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+	console.log(key,zona)
+	if(key.includes("-")){
+		fs.readFile('mensajeria/servicios.json', (err, data) => {
+			keyspl=key.split("-");
+			day=days[keyspl[0]];
+		    if (err) throw err;
+		    let horariosJS = JSON.parse(data);
+		    console.log("disponibles",horariosJS[ day ][keyspl[1] ][zona]);
+		    horariosJS[ day ][keyspl[1] ][zona]=parseFloat(horariosJS[ day ][keyspl[1] ][zona])-1;
+		    console.log("restantes",horariosJS[ day ][keyspl[1] ][zona]);
+		    let wrdata = JSON.stringify(horariosJS);
+			fs.writeFile('mensajeria/servicios.json', wrdata, (err) => {
+			    if (err) throw err;
+			    console.log('envios updated');
+			});
+		});
+		
+		 
+	}
+	
 
+}
 function makezones(){
 	IN_file="mensajeria/zonas.csv";
 	rownum=0;
 	obj={}
 	obj2={}
-	csv
-	 .parseFile(IN_file,{ delimiter:';'})  //BUG BIZARRO !!!
-	 .on("data", function(data){
-	 	if(rownum==0){}
-	 	else{
-	 		obj[data[0]]=[ data[1],data[3],data[4] ];
+	if (1==1){//fs.existsSync('mensajeria/zonas.json')) {
+	    csv
+		 .parseFile(IN_file,{ delimiter:';'})  //BUG BIZARRO !!!
+		 .on("data", function(data){
+		 	if(rownum==0){}
+		 	else{
+		 		obj[data[0]]=[ data[1],data[3],data[4] ];
 
-	 	}
-	 	rownum+=1;
-	 		 	
-	 })	
-	 .on("end", function(){
-	 	_ZONAS=obj;
-	 	//return (obj);
-	 	// this.codigosPostales=obj;
-	 	// console.log("_zones loaded_",this.codigosPostales)
-	 })
+		 	}
+		 	rownum+=1;
+		 		 	
+		 })	
+		 .on("end", function(){
+		 	_ZONAS=obj;
+		 	data = JSON.stringify(_ZONAS);
+			fs.writeFile('mensajeria/zonas.json', data, (err) => {
+			    if (err) throw err;
+			    console.log('Zones written to file');
+			});
+		 	//return (obj);
+		 	// this.codigosPostales=obj;
+		 	// console.log("_zones loaded_",this.codigosPostales)
+		 })
+	}
+	else{
+		console.log("zones exists")
+	}
+	
 }
 
 //ORDENES
 app.post('/orden', function (req, res) {
-  //console.log(req.body);
+	env=req.body["recoleccion"];
+	zona=req.body["zona"];
+	updateTickets(env,zona);
   name=req.body["username"].substring(0,4)+"__"+Math.floor(Math.random() * 100)+Math.floor(Date.now() / 60000);
   fs.writeFile("ordenes/"+name+".json",JSON.stringify(req.body) , function(err) {
 	    if(err) {
@@ -95,7 +183,6 @@ app.post('/orden', function (req, res) {
   
 });
 app.post('/ordenview', function (req, res) {
-  //console.log(req.body);
   nombreorden=req.body["nombre"];
   menuManager.getOrden(nombreorden, function(orden){
   		res.json(orden);
@@ -123,10 +210,16 @@ app.get('/menu', function (req, res) {
 app.post('/checkcp', function (req, res) {
   console.log(req.body);
   cp=req.body["cp"];
-  console.log(cp);
-  res.send(_ZONAS[cp]);
+  res.json(_ZONAS[cp]);
 });
-
+app.get('/checktickets', function (req, res) {
+  	fs.readFile('mensajeria/servicios.json', (err, data) => {
+	    if (err) throw err;
+	    let tickets = JSON.parse(data);
+	    res.json(tickets);
+	    //console.log(tickets);
+	});
+});
 
 //SITIO PRINCIPAL
 
@@ -335,6 +428,13 @@ app.post('/orion/uploadmenu', function (req, res) {
 			});
 			
 		});
+		fs.unlink('mensajeria/zonas.json', function (err) {
+		    if (err) throw err;
+		    console.log("zones erased");
+		    // if no error, file has been deleted successfully
+		    //res.sendStatus(200)
+		});
+		//
 	
 
 });
