@@ -258,6 +258,16 @@
     background-color: #ffffff00;
     font-size: 21pt;
     }
+    .carrito{
+        border:1px solid #1e824c;
+        text-align: center;
+        width: 100%;
+        /*margin-left: 25%;*/
+    height: 50px;
+    background-color: #ffffff00;
+    font-size: 21pt;
+    color:#1e824c;
+    }
     .gfgtable { 
                 border-collapse:separate; 
                 border-spacing:0 15px; 

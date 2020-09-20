@@ -44,17 +44,17 @@
     <body>
         <div class="menu-content">
             <div class="container">
-                <header>
+                <header style="position:fixed;background-color: #eeede6;top: 0px;">
                     <h1 class="float-left mb-0">Ciudad silvestre</h1>
                     <img class="float-right" id="logo" src="img/logo-cds.svg">
                     <div class="clearfix"></div>
                 </header>
-                <nav class="row">
+                <nav class="row" style="position:fixed;margin-top: 30px;left:0px;">
                     <div class="col col-sm-50 col-25 sm-nav-bottom" >
                         <a id="btn_menu_form" href="javascript();"> Inicia Sesión <span class="sm-hide">o Registrate</span></a>
                     </div>
                     <div class="col col-sm-50 col-25 sm-nav-bottom">
-                        <a class="sm-nav-right" href="http://ciudad-silvestre.superhi.com/the-space.html" target="_blank">Seguimiento de orden</a>
+                        <a class="sm-nav-right" onclick="tobottom()" target="_blank">Seguimiento de orden</a>
                     </div>
                     <div class="col col-sm-50 col-25">
                         <form class="form" id="total_top">Total <span id="total_bottom">MXN <span  style="color:tomato;font-size:20px;">$</span> <span id="sum" style="color:tomato;font-size:20px;"></span></span></form>
@@ -65,7 +65,7 @@
                 </nav>
 
                  <!-- start content form to Sign in or sign up -->
-                <div class="divider-bottom" id="form-login">
+                <div class="divider-bottom" style="margin-top: 20vh;" id="form-login">
 
                     <div class="row">
                         <div class="col col-30 col-sm-100 float-right sm-float-left">
@@ -249,7 +249,7 @@
 
             </div>
         </div>
-        <div class="body-container">
+        <div class="body-container" style="margin-top: 20vh;">
             
             <div class="container sm-pt-0">
 
@@ -283,7 +283,8 @@
                                     
                                 </table>
                         <br> 
-                            
+                        <div class="carrito" onclick="togglecar()"><img src="img/carrito.png" style="width:50px;"></div>
+                        
                     </div>
                     <br>
                     <div class="productos mb-1">
@@ -301,6 +302,8 @@
                     
                 </div>
                 <section class="horarios section" id="horariosTable">
+                    <h2>Comentarios Finales</h2>
+                    <textarea id="comentariosfinales" style="width:50%;"></textarea>
                     <h2>ELIGE TU DÍA DE ENTREGA</h2>
 
                     <table id="tablaHorarios" class="gfgtable">
@@ -427,13 +430,16 @@
                         <p class="text-uppercase">por favor, escribe tu número de orden para <br>que podamos rastrear tu pedido.</p>
                     </div>
                     <div class="pb-4 sm-pb-3 width-half">
-                        <form id="ordenes">
+                        
                             <div class="row">
-                                <div class="col col-60 col-sm-100"> <input class="form-control margin-0 text-uppercase" type="text" placeholder="Número de orden"> </div>
-                                <div class="col col-40 col-sm-100 pl-1 sm-pl-0 sm-mt-1"> <button class="btn button-block margin-0 class-h2 text-uppercase">Buscar</button> </div>
+                                <div class="col col-60 col-sm-100"> <input id="searchorden" class="form-control margin-0 text-uppercase" type="text" placeholder="Número de orden"> </div>
+                                <div class="col col-40 col-sm-100 pl-1 sm-pl-0 sm-mt-1"> <button onclick="ordenview()" class="btn button-block margin-0 class-h2 text-uppercase">Buscar</button> </div>
                                 <div class="clearfix"></div>
                             </div>
-                        </form>
+                            <div class="row" style="text-align:left;" id="showorder">
+
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -578,7 +584,7 @@ function despliegaMenu(){
             else{
                 
             }
-            trstr='<div class="row productrow" id="'+d_[9]+'"><div  class="col col-25 col-sm-100" style="font-size:16px !important;">'+nomproducto+'</div><div class="col col-20 col-sm-100 sm-mb-1">'+linkSocial+'</div><div class="col col-20 sm-hide catrow">'+d_[4]+', '+nomproductor+'</div><div class="col col-15 col-sm-50">mxn <span style="color:tomato;font-size:12px;">'+d_[7]+'</span> / '+d_[1]+'</div><div class="col col-5 sm-hide">'+d_[3]+'</div><div class="col col-15 col-sm-50 sm-text-right"><button class="btn-circle button-m">-</button> <input value="0" type="number" max="'+d_[3]+'" id="tentacles" idrow="'+d_[9]+'" onchange="updateInput(this.value,'+d_[9]+')" class="prInput inputsmall" producer="" product="'+d_[0]+'" name="tentacles"min="0" step="'+min+'" disabled> <button class="btn-circle button-p">+</button></div></div>';
+            trstr='<div class="row productrow unselected" id="'+d_[9]+'"><div  class="col col-25 col-sm-100" style="font-size:16px !important;">'+nomproducto+'</div><div class="col col-20 col-sm-100 sm-mb-1">'+linkSocial+'</div><div class="col col-20 sm-hide catrow">'+d_[4]+', '+nomproductor+'</div><div class="col col-15 col-sm-50">mxn <span style="color:tomato;font-size:12px;">'+d_[7]+'</span> / '+d_[1]+'</div><div class="col col-5 sm-hide">'+d_[3]+'</div><div class="col col-15 col-sm-50 sm-text-right"><button class="btn-circle button-m">-</button> <input value="0" type="number" max="'+d_[3]+'" id="tentacles" idrow="'+d_[9]+'" onchange="updateInput(this.value,'+d_[9]+')" class="prInput inputsmall" producer="" product="'+d_[0]+'" name="tentacles"min="0" step="'+min+'" disabled> <button class="btn-circle button-p">+</button></div></div>';
             $("#tabla_productos").append(trstr)
         }
 
@@ -651,14 +657,23 @@ function flitercat(cat){
 }
 
 function togglecar(){
+
     if(carselected){
-        $(".carrito").css("background-color","grey")
-        $(".unselected").toggle();
+        $(".category").removeClass("categorySelected");
+        $("#catindicator").html("");
+        $(".carrito").css("background-color","rgb(238 237 230)")
+        //$(".unselected").toggle();
+        $(".productrow").show();
+        $(".unselected").show();
         carselected=false;
     }
     else{
-        $(".carrito").css("background-color","cornflowerblue")
-        $(".unselected").toggle();
+        $(".category").removeClass("categorySelected");
+        $("#catindicator").html("");
+        $(".carrito").css("background-color","#1e824c")
+        $(".productrow").show();
+        $(".unselected").hide();
+        
         carselected=true;
     }
 }
@@ -746,9 +761,10 @@ function ordenar(){
         +_USER.noext+", "
         +_USER.colonia+", "+_USER.delegacion;
         indicaciones=_USER.indicaciones;
+        comentariosfinales=$("#comentariosfinales").val();
         form_total=$("#sum").html();
         envio=Number.parseFloat($("#costoenv").html() );
-        orden={"total":form_total,"envio":envio,"username":_USER.username,"envio":envio,"zona":_ZONA,"usuario_id":_USER.id,"direccion":form_direccion,"indicaciones":indicaciones,"phone":_USER.phone,"email":_USER.email,"recoleccion":_RECOLECCION,"orden":_productos}
+        orden={"total":form_total,"envio":envio,"username":_USER.username,"envio":envio,"zona":_ZONA,"usuario_id":_USER.id,"direccion":form_direccion,"indicaciones":indicaciones,"phone":_USER.phone,"email":_USER.email,"comentariosfinales":comentariosfinales,"recoleccion":_RECOLECCION,"orden":_productos}
         //console.log("_productos",JSON.stringify(orden));
             //var data = _productos;
             $.ajax({
@@ -1004,6 +1020,50 @@ function dosignup(){
   
   
 }  
+function tobottom(){
+    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+}
+
+//ORDERVIEW
+
+function ordenview(){
+    orden={}
+    mi=$("#searchorden").val();
+    orden["nombre"]=mi;
+    $.ajax({
+        url: '/ordenview',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(orden),
+        dataType: 'json',
+        success: function (data){
+            console.log(data);
+            despliegaInfoOrden(data )
+        }
+    });
+
+}
+function despliegaInfoOrden(data){
+    $("#showorder").html("");
+    $("#showorder").append('<h2>Info</h2>')
+    for(key in data){
+        if(key!="orden" && key!="usuario_id"){
+            $("#showorder").append('<span style="color:black;" class="infotitle">'+key+"</span>:"+data[key]+'<Br><Hr>')
+        }
+        else if(key=="orden"){
+            $("#showorder").append('<h2>Orden</h2>')
+            for(id in data[key]){
+                
+                ordens=data[key][id]
+                if(ordens[1]>0){
+                    $("#showorder").append('<span style="color:black;" class="infotitle">'+ordens[0]+"</span>:"+ordens[1]+'<Br><Hr>')
+                }
+                
+            }
+        }
+    }
+}
+
 
     </script>
 </html>
