@@ -488,13 +488,13 @@ $(document).ready(function(){
 
 });
 function checkcp(cp){
-  
-    console.log("checking",cp)
+    numbercp = parseInt(cp, 10);
+    console.log("checking",numbercp)
     $.ajax({
         url: '/checkcp',
         type: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify({"cp":cp}),
+        data: JSON.stringify({"cp":numbercp}),
         dataType: 'json',
         error: function(xhr, status, error) {
           console.log(xhr, status, error);
