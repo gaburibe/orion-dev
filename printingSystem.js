@@ -44,24 +44,29 @@ exports.printSingle= function (key,ordenInfo){
 			`+ordenInfo.total+`</td>
 			</tr>
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Costo de envío:</td><td style="padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
-			`+ordenInfo.costo_envio+`</td>
+			`+ordenInfo.envio+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Nombre:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
-			`+ordenInfo.nombre+`</td>
+			`+ordenInfo.username+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Teléfono:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
-			`+ordenInfo.telefono+`</td>
+			`+ordenInfo.phone+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Dirección:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
-			`+ordenInfo.dicreccion+`</td>
+			`+ordenInfo.direccion+`</td>
+			</tr>
+			<tr style="background-color: #fff;"">
+			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">
+			recolección:
+			</td><td style="font-size: 10pt;padding-left: 60px;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">`+ordenInfo.recoleccion+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">
 			Comentarios:
-			</td><td style="font-size: 10pt;padding-left: 60px;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">`+ordenInfo.comentarios+`</td>
+			</td><td style="font-size: 10pt;padding-left: 60px;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">`+ordenInfo.comentariosfinales+` -- `+ordenInfo.comentariosfinales+`</td>
 			</tr>
 
 			
@@ -80,13 +85,13 @@ exports.printSingle= function (key,ordenInfo){
 			  |    /     |    ,-.     |\
 			  |___/_______|__/___|_____| orion\
 \
-		      EL RENACER DEL CAMPO \
+		       \
+\
+		      CIUDAD SILVESTRE\
+\
+		      ciudadsilvestre.mx \
 \
 		      \
-\
-		      722 108 2700 \
-\
-		      @elrenacerdelcampo\
 \
 		</pre>`;
 		orden=ordenInfo.orden;
@@ -150,19 +155,19 @@ exports.print=function (callback){
 			`+ordenInfo.total+`</td>
 			</tr>
 			<td style="font-size: 12pt;border-bottom: 1px solid #000!important;">Costo de envío:</td><td style="padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
-			`+ordenInfo.costo_envio+`</td>
+			`+ordenInfo.envio+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Nombre:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
-			`+ordenInfo.nombre+`</td>
+			`+ordenInfo.username+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Teléfono:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
-			`+ordenInfo.telefono+`</td>
+			`+ordenInfo.phone+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">Dirección:</td><td style="font-size: 10pt;padding-left: 60px;border-bottom: 1px solid #1E824C!important;">
-			`+ordenInfo.dicreccion+`</td>
+			`+ordenInfo.direccion+`</td>
 			</tr>
 			<tr style="background-color: #fff;"">
 			<td style="font-size: 12pt;font-family:arial; color:#1E824C ;border-bottom: 1px solid #1E824C!important;">
@@ -175,8 +180,7 @@ exports.print=function (callback){
 			</table>
 		</div>
 		<pre  style="width:13vw;font-size: 4pt; height:10vw;position:fixed;top:10px;right: 140px;">
-						           o|
-			   _________/__|__________
+			 _________/__|__________
 			  |                  - (  |
 			 ,'-.                 . + |
 			(____".       ,-.    '   ||\
@@ -186,13 +190,11 @@ exports.print=function (callback){
 			  |    /     |    ,-.     |\
 			  |___/_______|__/___|_____| orion\
 \
-		      EL RENACER DEL CAMPO \
+		       \
 \
-		      \
+		      CIUDAD SILVESTRE\
 \
-		      722 108 2700 \
-\
-		      @elrenacerdelcampo\
+		      ciudadsilvestre.mx \
 		</pre>
 
 		`;

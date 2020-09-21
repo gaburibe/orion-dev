@@ -389,7 +389,12 @@
                                 <h3 class="mb-0">TOTAL</h3>
                                 <p class="mt-0">MXN $<span id="total_check"></span></p>
 
-                                <p class="mt-3 sm-mt-2 sm-mb-0"><small class="primary"><!-- Puedes seguir tu orden escaneando el código qr.  -->Las órdenes se entregan el día jueves de cada semana. En caso de recolección en Ámsterdam 46, el pedido estará listo a partir de las 16:00 hrs.</small></p>
+                                <p class="mt-3 sm-mt-2 sm-mb-0"><small class="primary"><!-- Puedes seguir tu orden escaneando el código qr.  -->
+                                    En caso de recolección manual la dirección es:
+                                    <br>
+
+                                    Calle Tlacoquemecatl 67A, Tlacoquemecatl del Valle, Benito Juárez, 03200 Ciudad de México, CDMX, Mexico
+                         <a href="https://goo.gl/maps/JaCqRx7adNxEDS8UA">Link a google maps</a></small></p>
                             </div>
                         </div>
                         <div class="col col-50 col-sm-100 sm-mt-2 sm-pt-1 sm-pt-1 sm-divider-top">
@@ -801,7 +806,7 @@ function dosignin(){
   else{
     console.log("sign in");
   }
-  _u=$("#_u").val();
+  _u=$("#_u").val().toLowerCase();
   _p=$("#_p").val();
   console.log("log",_u,_p)
   $.ajax({
@@ -981,7 +986,13 @@ function dosignup(){
   _R={};
   vacios="";
   $( "input.obligatorio" ).each(function() {
-    _R[$( this ).attr("name")]=$( this ).val();
+     if($( this ).attr("name")=="username"){
+        _R[$( this ).attr("name")]=$( this ).val().toLowerCase();
+     }
+     else{
+        _R[$( this ).attr("name")]=$( this ).val();
+     }
+    
   });
   // _R["username"]=_R["phone"]
   $( ".obligatorio" ).each(function() {
@@ -1008,7 +1019,7 @@ function dosignup(){
           //alert(xhr.responseText);
         },
         success: function (data){
-
+          $("#console").html("Tu usuario fue creado exitosamente. Por favor haz login :)");
           // $(".step2").addClass('d-none');
           // $(".step3").removeClass('d-none');
 
