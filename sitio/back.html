@@ -4,27 +4,17 @@
 	  <meta charset="UTF-8">
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script type="text/javascript" src="js/jquery.js" />
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<link href="css/theme.default.css" rel="stylesheet">
+	<script src="js/jquery.tablesorter.min.js"></script>
+	<script src="js/jquery.tablesorter.widgets.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js" />
-	<link href="css/addons/datatables.min.css" rel="stylesheet">
-	<!-- MDBootstrap Datatables  -->
-<script type="text/javascript" src="js/addons/datatables.min.js"></script>
-
+<!-- <script type="text/javascript" src="js/addons/datatables.min.js"></script> -->
+	<link rel="stylesheet" href="css/orion.css">
 	<title>〔 〄 〕 - Orion</title>
 </head>
 <style type="text/css">
-	table.dataTable thead .sorting:after,
-table.dataTable thead .sorting:before,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_desc:before,
-table.dataTable thead .sorting_desc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:before {
-  bottom: .5em;
-}
+
 
 .head{
 	text-align: center;
@@ -210,7 +200,7 @@ table.dataTable thead .sorting_desc_disabled:before {
     background-color: white;
 }
 </style>
-<link rel="stylesheet" href="css/orion.css">
+
 <body>
 	<br>
 <div class="container head" >
@@ -373,6 +363,14 @@ function getOrdenes(){
 				      ;
 				      $("#tabla_productos").append(trstr)
 			    }
+
+			    $('#myTable').tablesorter({
+					widgets        : ['zebra', 'columns'],
+					usNumberFormat : false,
+					sortReset      : true,
+					sortRestart    : true
+				});
+
 	    }
 	});
 	$("#tabla_productos").html("")
