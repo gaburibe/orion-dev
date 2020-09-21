@@ -19,7 +19,7 @@ const cors = require("cors");
 //        /.-'     "     '-.\
 //         Julia Orion Smith
 
-const port = 1313; 
+const port = 3000; 
 const _K = "MTIzNHx8b3Jpb24="; 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -184,6 +184,7 @@ app.post('/orden', function (req, res) {
 });
 app.post('/ordenview', function (req, res) {
   nombreorden=req.body["nombre"];
+  console.log(nombreorden);
   menuManager.getOrden(nombreorden, function(orden){
   		res.json(orden);
   });
