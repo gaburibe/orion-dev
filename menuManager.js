@@ -120,6 +120,7 @@ exports.actualiza=function (orden,callback){
 exports.getOrden= function(orden,callback){
 	if (fs.existsSync('ordenes/'+orden+".json")) {
     	orden = JSON.parse(fs.readFileSync('ordenes/'+orden+".json", 'utf8'));
+    	// console.log(orden);
 		callback(orden);
   	}
   	else{
@@ -369,12 +370,12 @@ function getHeader(singularOrder){
 function handleOrder(file,singularOrder){
 	respuesta=
 	file+";"+
-	singularOrder["nombre"]+";"+
+	singularOrder["username"]+";"+
 	singularOrder["total"]+";"+
-	singularOrder["telefono"]+";"+
-	singularOrder["dicreccion"]+";"+
-	singularOrder["comentarios"]+";"+
-	singularOrder["costo_envio"]+";;";
+	singularOrder["phone"]+";"+
+	singularOrder["direccion"]+";"+
+	singularOrder["comentariosfinales"]+";"+
+	singularOrder["envio"]+";"+singularOrder["recoleccion"]+";";
 	for(key in singularOrder["orden"]){
 
 		productArray=singularOrder["orden"][key];
