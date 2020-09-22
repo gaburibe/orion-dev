@@ -729,9 +729,9 @@ function makesum(){
 function checkout(){
         form_name=_USER.username;
         form_telefono=_USER.phone;
-        form_direccion=_USER.calle+" "
-        +_USER.noint+"- "
-        +_USER.noext+", "
+        form_direccion=_USER.calle+" ext: "
+        +_USER.noext+"- int:"
+        +_USER.noint+", "
         +_USER.colonia+", "+_USER.delegacion;
         //form_comentario=$("#t_").val();
         if(form_name=="" || form_telefono=="" || form_direccion=="" ){
@@ -761,9 +761,9 @@ function ordenar(){
         orden={};
         form_name=_USER.username;
         form_telefono=_USER.phone;
-        form_direccion=_USER.calle+" "
-        +_USER.noint+"- "
-        +_USER.noext+", "
+        form_direccion=_USER.calle+", ext: "
+        +_USER.noext+"- int: "
+        +_USER.noint+", "
         +_USER.colonia+", "+_USER.delegacion;
         indicaciones=_USER.indicaciones;
         comentariosfinales=$("#comentariosfinales").val();
@@ -906,7 +906,7 @@ function checkTickets(){
           console.log(numday,day,"zona",_ZONA);
 
 
-          for(i=0;i<days.length;i++){
+          for(i=numday+1;i<days.length;i++){
             horarios=data[days[i]];
             for(horario in horarios){
                 console.log(i+"-"+horario,_ZONA);
