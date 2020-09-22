@@ -60,7 +60,7 @@
                         <form class="form" id="total_top">Total <span id="total_bottom">MXN <span  style="color:tomato;font-size:20px;">$</span> <span id="sum" style="color:tomato;font-size:20px;"></span></span></form>
                     </div>
                     <div class="col col-sm-50 col-25">
-                        <button class="button" onclick="step2();">Completar Orden</button>
+                        <button id="boton-completar" class="button" style="display:none;" onclick="step2();">Completar Orden</button>
                     </div>
                 </nav>
 
@@ -338,7 +338,7 @@
                            <td class="agotado hrb" id="5-vespertino">Viernes 3 a 6</td>
                        </tr>
                        <tr>
-                           <td class="horario hrb" id="recoleccionTienda" colspan="3">Recoger en tienda</td>
+                           <td class="horario hrb" id="recoleccionTienda" colspan="3">Recoger en tienda (24 horas)</td>
                        </tr>
                     </table>
                    <!--  <div class="row mb-1">
@@ -365,7 +365,9 @@
                     <hr>
                     <hr>
                     <div class="row">
+                        <img id="loading" src="img/loading.gif" style="width:300px;display:none;">
                         <button style="display:none;" class="button-order" onclick="ordenar();">Ordenar</button>
+
                     </div>
                 </section>
                 <section class="ticket mb-4 sm-mb-1" id="checkTable">
@@ -476,7 +478,7 @@ $(document).ready(function(){
     
     makesum();
     getMenu();
-    
+    $("#menuTable").show();
     jwt=getCookie("jwt");
 
       if(jwt.length>=2){
@@ -722,8 +724,13 @@ function makesum(){
         
     }
     console.log("sum",sum,envio)
-
-    $("#sum").text(sum);
+    if(isNaN(sum)){
+        $("#sum").text("--");
+    }
+    else{
+        $("#sum").text(sum);
+    }
+    
     $("#total_check").html(sum);
 }
 function checkout(){
@@ -757,7 +764,8 @@ function regresar(){
         $(".searcharea").show();
 }
 function ordenar(){
-        $(".ordenar").hide();
+        $(".button-order").hide();
+        $("#loading").show();
         orden={};
         form_name=_USER.username;
         form_telefono=_USER.phone;
@@ -779,6 +787,7 @@ function ordenar(){
         data: JSON.stringify(orden),
         dataType: 'json',
         success: function (data){
+            $("#loading").hide();
             console.log("DATA",data);
             step3();
             $("#avisofinal").html('<p>Tu pedido ha sido procesado! Para confirmar tu orden te pedimos enviar tu comprobante de pago y tu número de orden por whatsapp al teléfono: xxxxxx.</p> <p>Si deseas visualizar tu pedido, copia tu número de orden e ingresalo en el siguiente link: <a href="/orden" target="_blank">VISOR</a></p>');
@@ -819,6 +828,7 @@ function dosignin(){
         },
         dataType: 'json',
         success: function (data){
+            $("#boton-completar").show();
             if(data.username){
                 _USER=data;
                 isuser();
@@ -944,6 +954,7 @@ function checkInfo(){
           console.log("DATA user",data);
           $("#userinfo").html();
           if(data.username.length>=1){
+            $("#boton-completar").show();
             isuser()
             _USER=data;
             zona=$("#zonaenv").html();
