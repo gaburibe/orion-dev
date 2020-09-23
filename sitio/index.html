@@ -933,14 +933,14 @@ function checkTickets(){
             
             console.log(_CALENDARIO);
           }
-          colchon={"matutino":15,"mediodia":18,"vespertino":22}
+          colchon={"matutino":12,"mediodia":15,"vespertino":18}
             horariosP=data[days[numday+1]];
             console.log("horariosP",horariosP,numday+1)
             for(horario in horariosP){
                 console.log("cancelando horarios...",(numday+1)+"-"+horario,colchon[horario],horadeldia);
                 if(colchon[horario]>=horadeldia){
-                    $("#"+(numday+1)+"-"+horario).addClass("horario");
-                    $("#"+(numday+1)+"-"+horario).removeClass("agotado");
+                    // $("#"+(numday+1)+"-"+horario).addClass("horario");
+                    // $("#"+(numday+1)+"-"+horario).removeClass("agotado");
                     //5-15:00-18:00
                 }
                 else{
