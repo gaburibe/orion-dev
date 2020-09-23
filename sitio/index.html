@@ -914,8 +914,10 @@ function checkTickets(){
 
           var day = days[ numday ];
           console.log(numday,day,"zona",_ZONA);
-
-
+          var d = new Date();
+          var horadeldia = d.getHours();
+            console.log("hora",horadeldia);
+            
           for(i=numday+1;i<days.length;i++){
             horarios=data[days[i]];
             for(horario in horarios){
@@ -930,9 +932,22 @@ function checkTickets(){
             }
             
             console.log(_CALENDARIO);
-            
-
           }
+          colchon={"matutino":15,"mediodia":18,"vespertino":22}
+            horariosP=data[days[numday+1]];
+            console.log("horariosP",horariosP,numday+1)
+            for(horario in horariosP){
+                console.log("cancelando horarios...",(numday+1)+"-"+horario,colchon[horario],horadeldia);
+                if(colchon[horario]>=horadeldia){
+                    $("#"+(numday+1)+"-"+horario).addClass("horario");
+                    $("#"+(numday+1)+"-"+horario).removeClass("agotado");
+                    //5-15:00-18:00
+                }
+                else{
+                    $("#"+(numday+1)+"-"+horario).addClass("agotado");
+                    $("#"+(numday+1)+"-"+horario).removeClass("horario");
+                }
+            }
           
           
           
