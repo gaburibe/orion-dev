@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="login_form row mt-4 sm-mt-0">
                                         <div class="col col-100">
-                                            <input class="form-control input-border" type="text" id="_u" name="user" placeholder="USUARIO">
+                                            <input class="form-control input-border" type="text" id="_u" name="user" placeholder="EMAIL">
                                         </div>
                                         <div class="col col-100">
                                             <input class="form-control input-border" type="password" id="_p" name="pass" placeholder="CONTRASEÑA">
@@ -380,8 +380,8 @@
                                 <h3 class="mb-0">LA ENTREGAREMOS EN:</h3>
                                 <!-- <img src="img/QR.png" width="160" class="float-right ml-1" /> -->
                                 <p class="mt-0">
-                                    <span id="usr_address"></span><br>
-                                    <span id="usr_phone"></span>
+                                    <span id="superdireccion"></span><br>
+                                    
                                 </p>
 
 
@@ -482,7 +482,7 @@ $(document).ready(function(){
     jwt=getCookie("jwt");
 
       if(jwt.length>=2){
-        checkInfo();
+        //checkInfo();
       }
 
       $("#search").on("keyup", function() {
@@ -725,7 +725,7 @@ function makesum(){
     }
     console.log("sum",sum,envio)
     if(isNaN(sum)){
-        $("#sum").text("--");
+        $("#sum").html("<span style=\"font-size: 8pt;color: blue;\">(inicia sesión)</span>");
     }
     else{
         $("#sum").text(sum);
@@ -790,6 +790,7 @@ function ordenar(){
             $("#loading").hide();
             console.log("DATA",data);
             step3();
+            $("#superdireccion").html(form_direccion);
             $("#avisofinal").html('<p>Tu pedido ha sido procesado! Para confirmar tu orden te pedimos enviar tu comprobante de pago y tu número de orden por whatsapp al teléfono: xxxxxx.</p> <p>Si deseas visualizar tu pedido, copia tu número de orden e ingresalo en el siguiente link: <a href="/orden" target="_blank">VISOR</a></p>');
             $("#numorden").text(data.orden);
             $(".regresar").hide();
@@ -807,10 +808,10 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";"+ + expires + ";path=/; SameSite=None; Secure";
 }
 function dosignin(){
-  jwt=getCookie("jwt");
+  //jwt=getCookie("jwt");
 
   if(jwt.length>=2){
-    checkInfo();
+    //checkInfo();
   }
   else{
     console.log("sign in");
@@ -822,11 +823,15 @@ function dosignin(){
         url: '/api/auth/signin',
         type: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify({"username":_u,"password":_p}),
+        data: JSON.stringify({"email":_u,"password":_p}),
         beforeSend: function (xhr) {   //Include the bearer token in header
         xhr.setRequestHeader("Authorization", 'Bearer '+ jwt);
         },
         dataType: 'json',
+        error: function (xhr, ajaxOptions, thrownError) {
+        console.log(xhr);
+        alert(xhr.responseJSON.message);
+      },
         success: function (data){
             $("#boton-completar").show();
             if(data.username){

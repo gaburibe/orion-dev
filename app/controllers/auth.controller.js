@@ -78,7 +78,7 @@ exports.signup = (req, res) => {
 exports.signin = (req, res) => {
 
   User.findOne({
-    username: req.body.username
+    email: req.body.email
   })
     .populate("roles", "-__v")
     .exec((err, user) => {
@@ -88,7 +88,7 @@ exports.signin = (req, res) => {
       }
 
       if (!user) {
-        return res.status(404).send({ message: "Usuario no encontrado." });
+        return res.status(404).send({ message: "Email no encontrado." });
       }
 
       var passwordIsValid = bcrypt.compareSync(
