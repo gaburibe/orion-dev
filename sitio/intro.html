@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://ciudad-silvestre.superhi.com/ -->
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="generator" content="SuperHi">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ciudad Silvestre</title>
+        <link rel="stylesheet" href="css/_base.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <style type="text/css">
+        .inputsmall{
+    width: 50px;
+    
+    }
+    #info{
+        /*display:none;*/
+    }
+    .col{
+        font-size: 12px !important;
+    }
+    #registro_input{
+
+    }
+    #info_input{
+        display:none;
+    }
+    #logout_bt{
+        display:none;
+    }
+    #menuTable{
+        display: none;
+    }
+    #horariosTable{
+        display:none;
+    }
+    #checkTable{
+        display:none;
+    }
+    </style>
+    <body>
+        <div class="menu-content">
+            <div class="container">
+                <header style="position:fixed;background-color: #eeede6;top: 0px;">
+                    <h1 class="float-left mb-0">Ciudad silvestre</h1>
+                    <img class="float-right" id="logo" src="img/logo-cds.svg">
+                    <div class="clearfix"></div>
+                </header>
+                <nav class="row" style="position:fixed;margin-top: 30px;left:0px;">
+                    <div class="col col-sm-50 col-25 sm-nav-bottom" >
+                        <a id="btn_menu_form" href="http://ciudadsilvestre.mx/">  <span class="sm-hide">Ir al mercado</span></a>
+                    </div>
+                    
+                </nav>
+
+                 <!-- start content form to Sign in or sign up -->
+                <div class="divider-bottom" style="margin-top: 20vh;" id="form-login">
+
+                    <div class="row">
+                        <div class="col col-30 col-sm-100 float-right sm-float-left">
+                            <div class="mb-2 mt-2 padding-2 pt-0 pr-1 sm-mt-0 sm-mb-0 sm-pb-0 sm-padding-2 sm-pt-1">
+                                <div class="text-right sm-show">
+                                    <a id="close_login" class="class-h3"><i class="fa fa-times"></i> </a>
+                                </div>
+                                
+                                    <div class="row">
+                                        <div class="login_form col col-100 text-center">
+                                            <h2>Iniciar sesión</h2>
+                                        </div>
+                                    </div>
+                                    <div class="login_form row mt-4 sm-mt-0">
+                                        <div class="col col-100">
+                                            <input class="form-control input-border" type="text" id="_u" name="user" placeholder="EMAIL">
+                                        </div>
+                                        <div class="col col-100">
+                                            <input class="form-control input-border" type="password" id="_p" name="pass" placeholder="CONTRASEÑA">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-100">
+                                            <button onclick="dosignin()" class="login_form button button-nav button-block">Iniciar sesión</button>
+                                            <button id="logout_bt" onclick="dologout()" class="button button-nav button-block">Logout</button>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col col-70 col-sm-100">
+                            <div id="info_input" class="mb-2 mt-2 padding-2 pt-0 pl-1 mr-1  divider-right sm-padding-2 sm-mr-0 sm-divider-right-0 sm-divider-top">
+                                <div id="info">
+                                        <div class="row">
+                                            <div class="col-sm-4" >
+                                                <span style="color:black;">Usuario:</span>
+                                                <span id="t_username"></span>
+                                            </div>
+                                            <div class="col-sm-4" id="">
+                                                <span style="color:black;">Crédito:</span>
+                                                <span id="t_credit"></span>
+                                            </div>
+                                            <div class="col-sm-4" id="">
+                                                <span style="color:black;">Nombre:</span>
+                                                <span id="t_name"></span>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-sm-4" id="">
+                                                <span style="color:black;">Email:</span>
+                                                <span id="t_email"></span>
+                                            </div>
+                                            <div class="col-sm-4" id="">
+                                                <span style="color:black;">Teléfono:</span>
+                                                <span id="t_phone"></span>
+                                            </div>
+                                            <div class="col-sm-4" id="">
+                                                <span style="color:black;">CP:</span>
+                                                <span id="t_cp"></span>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-sm-2" id="">
+                                                <span style="color:black;">Calle:</span>
+                                                <span id="t_calle"></span>
+                                            </div>
+                                            <div class="col-sm-2" id="">
+                                                <span style="color:black;">No exterior:</span>
+                                                <span id="t_noext"></span>
+                                            </div>
+                                            <div class="col-sm-2" id="">
+                                                <span style="color:black;">No interior:</span>
+                                                <span id="t_noint"></span>
+                                            </div>
+                                            <div class="col-sm-3" id="">
+                                                <span style="color:black;">Colonia:</span>
+                                                <span id="t_colonia"></span>
+                                            </div>
+                                            <div class="col-sm-3" id="">
+                                                <span style="color:black;">Delegación:</span>
+                                                <span id="t_delegacion"></span>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-sm-4" id="">
+                                                <span style="color:black;"></span>
+                                                
+                                            </div>
+                                            <div class="col-sm-4" id="">
+                                                <span style="color:black;">Zona:</span>
+                                                <span id="zonaenv"></span>
+                                            </div>
+                                            <div class="col-sm-4" id="">
+                                                <span style="color:black;">Costo de envio:</span>
+                                                <span id="costoenv"></span>
+                                            </div>
+                                            
+                                          </div>
+                                </div>
+
+                            </div>
+                            <div id="registro_input" class="mb-2 mt-2 padding-2 pt-0 pl-1 mr-1  divider-right sm-padding-2 sm-mr-0 sm-divider-right-0 sm-divider-top">
+                                
+                                    <div class="row">
+                                        <div class="col col-100 sm-text-center">
+                                            <h2>Regístrate</h2>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col col-50">
+                                            <label for="nombre">Nombre</label>
+                                            <input class="form-control-material obligatorio" type="text"  name="name">
+                                        </div>
+                                        <div class="col col-50">
+                                            <label for="nombre">Nombre de Usuario</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="username">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col col-50">
+                                            <label for="calle">Calle</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="calle">
+                                        </div>
+                                        <div class="col col-25">
+                                            <label for="numeroExterior">Número Exterior</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="noext">
+                                        </div>
+                                        <div class="col col-25">
+                                            <label for="interiorDepartamento">Interior</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="noint">
+                                        </div>
+                                    </div>
+                                   <div class="row">
+                                         <div class="col col-50">
+                                            <label for="colonia">Colonia</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="colonia">
+                                        </div>
+                                        <div class="col col-25">
+                                            <label for="delegacion">Delegación</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="delegacion">
+                                        </div>
+                                        <div class="col col-25">
+                                            <label for="cp">CP</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="cp">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-50">
+                                            <label for="email">Email</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="email">
+                                        </div>
+                                        <div class="col col-50">
+                                           <label for="email">Teléfono</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="phone">
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                            <div class="col col-50">
+                                           <label for="email">Password</label>
+                                            <input class="obligatorio form-control-material" type="text"  name="password">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <div class="col col-50 col-sm-100">
+                                            <button onclick="dosignup()" class="button button-nav button-block">Registrarme</button>
+                                        </div>
+                                        <div class="col col-50 col-sm-100">
+                                            <p class="message-success mt-1 text-uppercase" id="console"></p>
+                                        </div>
+                
+                                    </div>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="body-container" style="margin-top: 20vh;">
+            
+            <div class="container sm-pt-0">
+
+
+                <section id="intro" style="text-align: center;" class="intro section pt-0 pb-0 mt-0 sm-mt-0 sm-pt-0">
+                    <img src="img/sanji.png" alt="Ciudad Silvestre">
+                    <p class="primary text-lead text-uppercase mt-1 sm-mb-0">
+                        Ciudad Silvestre nace con el objetivo de vincular a productores de zonas aledañas a la Ciudad de México con redes de consumo con interés en productos de alta calidad y en trazabilidad de producción.
+                    </p>
+                </section>
+                <section id="intro" class="intro section pt-0 pb-0 mt-0 sm-mt-0 sm-pt-0">
+                    
+                    <p class=" text-uppercase mt-1 sm-mb-0">
+                        La trazabilidad de producción es un eje principal al elegir los productos que ofrecemos. Esto ya que es imposible disminuir el daño provocado al medio ambiente si no cambiamos los métodos de producción con los que producimos nuestros alimentos. 
+                    </p>
+                     <p class=" text-uppercase mt-1 sm-mb-0">
+                        Para cultivar producciones grandes se necesita: regar con pesticida, construir una fábrica y entubar los rios destruyendo el ecosistema circundante o mataderos gigantezcos donde se trata con suma crueldad a los animales. 
+                    </p>
+                    <p class=" text-uppercase mt-1 sm-mb-0">
+                        Con este problema en mente, se han creado en la actualidad métodos de cultivo que no dañan el medio ambiente, no usar pesticida hace que los insectos de la zona puedan prosperar contribuyendo a la mejora del ecosistema y la técnica de libre pastoreo hace que los animales de granja puedan tener una vida digna en libertad.
+                    </p>
+                     <p class=" text-uppercase mt-1 sm-mb-0">
+                        Sin embargo estas técnicas sólo se pueden lograr a nivel local y a escala de  pequeña a mediana. Además requieren de una capacidad técnica y conocimiento mayores por parte de los productores.
+                    </p>
+                    <p class=" text-uppercase mt-1 sm-mb-0">
+                        Aunado a esto, actualmente y debido a las medidas tomadas para combatir el covid, el campo mexicano no ha podido competir con empresas transnacionales debido principalmente a que en México no poseemos las herramientas tecnologicas para competir con nuestro principal rival comercial: Estados Unidos. Se cerro la central de abastos, el principal punto de venta de los productores pequeños en México y se pudrieron cosechas enteras. El campo mexicano no esta en buen estado, se podría decir que esta en quiebra y estamos obligando a los campesinos a vender sus tierras.
+                    </p>
+                    <p class=" text-uppercase mt-1 sm-mb-0">
+                        Ciudad Silvestre somos un equipo de personas con amplia experiencia en el negocio de alimentos y herramientas digitales de mercado. Nuestra apuesta es por un modelo de negocio donde podamos asegurar a usted, el cliente, una calidad superior a la oferta de los supermercados y demás puntos de venta de empresas transnacionales y al mismo tiempo, asegurar que los métodos de producción son acordes con nuestra filosofía.
+                    </p>
+                    <p class=" text-uppercase mt-1 sm-mb-0">
+                        Todo esto claro, para que la comida que comas este super deli :). A final de cuentas <a href="https://www.youtube.com/watch?v=BV9MmgzHQG0">SOMOS LO QUE COMEMOS</a>
+                    </p>
+                    <p class=" text-uppercase mt-1 sm-mb-0">
+                        
+                    </p>
+                </section>
+
+                
+                    <br>
+                    
+                  
+                    
+                
+               
+                
+            </div>
+        </div>
+        <footer>
+            <div class="footer1 text-center">
+                <div class="container">
+                    <div class="pt-4 pb-4 sm-pb-1 pt-4 sm-pt-3 width-half">
+                        <h2>Sigue tu pedidos</h2>
+                        <p class="text-uppercase">por favor, escribe tu número de orden para <br>que podamos rastrear tu pedido.</p>
+                    </div>
+                    <div class="pb-4 sm-pb-3 width-half">
+                        
+                            <div class="row">
+                                <div class="col col-60 col-sm-100"> <input id="searchorden" class="form-control margin-0 text-uppercase" type="text" placeholder="Número de orden"> </div>
+                                <div class="col col-40 col-sm-100 pl-1 sm-pl-0 sm-mt-1"> <button onclick="ordenview()" class="btn button-block margin-0 class-h2 text-uppercase">Buscar</button> </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row" style="text-align:left;" id="showorder">
+
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="footer2 text-center">
+                <div class="container">
+                    <div class="pt-4 pb-2 sm-pt-2 width-half">
+                        <p class="text-lead">
+                            <a href="mailto:contacto@ciudadsilvestre.mx">contacto@ciudadsilvestre.mx</a><br>
+                            <a target="_blank" href="http://wa.link/yssoe4">5572117094</a><br>
+                            <a target="_blank" href="https://www.instagram.com/ciudad_silvestre/"><img src="img/inst.png" alt="instagram" width="25"></a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/superhi.js"></script>
+    </body>
+    <script type="text/javascript">
+      
+
+    </script>
+</html>

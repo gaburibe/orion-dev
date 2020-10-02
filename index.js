@@ -235,6 +235,13 @@ app.get('/', function (req, res) {
 	}	
 
 });
+app.get('/intro', function (req, res) {
+	menudir="./menu/mainmenu.csv";
+	
+	   res.sendFile(path.join(__dirname + '/sitio/intro.html'));
+
+
+});
 app.get('/orden', function (req, res) {
 	res.sendFile(path.join(__dirname + '/sitio/orderview.html'));
 
